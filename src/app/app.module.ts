@@ -9,6 +9,9 @@ import { AnnouncementsComponent } from './views/announcements/announcements.comp
 import { LoginComponent } from './views/login/login.component';
 import { TeachersHomeComponent } from './views/teachers-home/teachers-home.component';
 import { StudentsHomeComponent } from './views/students-home/students-home.component';
+import { NavComponent } from './views/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,12 +19,19 @@ import { StudentsHomeComponent } from './views/students-home/students-home.compo
     AnnouncementsComponent,
     LoginComponent,
     TeachersHomeComponent,
-    StudentsHomeComponent
+    StudentsHomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
