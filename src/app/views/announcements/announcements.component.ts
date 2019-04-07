@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Announcement} from '../../models/announcement';
 
 @Component({
   selector: 'app-announcements',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AnnouncementsComponent implements OnInit {
 
-  constructor() { }
+  announcements: Announcement;
+  t = 5;
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.announcements =
+      new Announcement({
+        id: 1,
+        date: now(),
+        title: 'Dummy Ann 1',
+        body: 'Dummy Ann 1 body text'}
+        )
+      ;
   }
 
 }

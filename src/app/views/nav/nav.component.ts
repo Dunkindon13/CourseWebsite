@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class NavComponent {
 
+  title = 'CourWeb';
   teacherLoggedIn = false;
   studentLoggedIn = true;
 

@@ -1,8 +1,8 @@
 export class Announcement {
     id: number;
-    date: Date;
-    title: string;
-    body: string;
+  date: Date;
+  title: string;
+  body: string;
 
     constructor(args) {
         if (args) {
