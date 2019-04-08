@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import {Announcement} from '../../models/announcement';
+import {TvmazeService} from '../../tempDmitry/tvmaze.service';
+import {FakeAnn} from '../../tempDmitry/fake-ann';
 
 @Component({
   selector: 'app-announcements',
   templateUrl: './announcements.component.html',
-  styleUrls: ['./announcements.component.sass']
+  styleUrls: ['./announcements.component.css']
 })
 export class AnnouncementsComponent implements OnInit {
 
-  announcements: Announcement;
-  t = 5;
+  announcements: FakeAnn[];
+  searchString = 'office';
+  // t = 5;
 
-  constructor() {
+  constructor(private searchService: TvmazeService) {
   }
 
   ngOnInit() {
-  //   this.announcements =
-  //     new Announcement({
-  //       id: 1,
-  //       date: now(),
-  //       title: 'Dummy Ann 1',
-  //       body: 'Dummy Ann 1 body text'}
-  //       )
-  //     ;
+    this.searchService.getShowSearchResults(this.searchString).subscribe(results => { this.announcements = results; } );
   }
 
 }

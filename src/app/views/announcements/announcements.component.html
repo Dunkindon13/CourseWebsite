@@ -1,7 +1,23 @@
-<h3>Announcement</h3>
+<h3>Announcement bla-bla </h3>
 
-
-  {{t}}
-
+<mat-accordion multi="true" class="my-headers-align">
+  <div *ngFor="let announcement of announcements; index as i ">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ID: {{announcement.id}}
+        </mat-panel-title>
+        <mat-panel-title>
+          Date: {{announcement.date}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Subject: {{announcement.title}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="showSummary" [innerHTML]="announcement.body"></div>
+      <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
 
 
