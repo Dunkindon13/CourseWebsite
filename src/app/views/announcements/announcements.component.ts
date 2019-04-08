@@ -15,14 +15,14 @@ export class AnnouncementsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.announcements =
-      new Announcement({
-        id: 1,
-        date: now(),
-        title: 'Dummy Ann 1',
-        body: 'Dummy Ann 1 body text'}
-        )
-      ;
+  //   this.announcements =
+  //     new Announcement({
+  //       id: 1,
+  //       date: now(),
+  //       title: 'Dummy Ann 1',
+  //       body: 'Dummy Ann 1 body text'}
+  //       )
+  //     ;
   }
 
 }
