@@ -9,6 +9,12 @@ import { AnnouncementsComponent } from './views/announcements/announcements.comp
 import { LoginComponent } from './views/login/login.component';
 import { TeachersHomeComponent } from './views/teachers-home/teachers-home.component';
 import { StudentsHomeComponent } from './views/students-home/students-home.component';
+import { NavComponent } from './views/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,14 +22,27 @@ import { StudentsHomeComponent } from './views/students-home/students-home.compo
     AnnouncementsComponent,
     LoginComponent,
     TeachersHomeComponent,
-    StudentsHomeComponent
+    StudentsHomeComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  private static HttpModule: any;
+}

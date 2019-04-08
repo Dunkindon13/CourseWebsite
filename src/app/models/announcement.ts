@@ -5,6 +5,7 @@ export class Announcement {
     title: string;
     body: string;
 
+
     constructor(args) {
         if (args) {
             this.id = args.id;
