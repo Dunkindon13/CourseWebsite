@@ -11,7 +11,18 @@ import { TeachersHomeComponent } from './views/teachers-home/teachers-home.compo
 import { StudentsHomeComponent } from './views/students-home/students-home.component';
 import { NavComponent } from './views/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatInputModule,
+  MatRadioModule
+} from '@angular/material';
+import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +42,12 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
