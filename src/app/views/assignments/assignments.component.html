@@ -25,10 +25,10 @@
           Subject: {{assignment.title}}
         </mat-panel-description>
         <mat-panel-description>
-          Release Date: {{assignment.releaseDate}}
+          Release Date: {{assignment.releaseDate | date:'mediumDate'}}
         </mat-panel-description>
         <mat-panel-description>
-          Due Date: {{assignment.dueDate}}
+          Due Date: {{assignment.dueDate | date: 'mediumDate'}}
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="showSummary" [innerHTML]="assignment.body"></div>
