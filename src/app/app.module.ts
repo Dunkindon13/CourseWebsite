@@ -26,6 +26,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {HttpClientModule} from '@angular/common/http';
+import { ReversePipe } from './controllers/reverse.pipe';
 
 
 
@@ -36,7 +37,8 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     TeachersHomeComponent,
     StudentsHomeComponent,
-    NavComponent
+    NavComponent,
+    ReversePipe
   ],
   imports: [
     BrowserModule,
