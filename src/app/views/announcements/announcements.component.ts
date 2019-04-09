@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import {AnnouncementsService} from '../../models/announcements.service';
 import {Announcement} from '../../models/announcement';
 
 @Component({
   selector: 'app-announcements',
   templateUrl: './announcements.component.html',
-  styleUrls: ['./announcements.component.sass']
+  styleUrls: ['./announcements.component.scss']
 })
 export class AnnouncementsComponent implements OnInit {
-
-  announcements: Announcement;
-  t = 5;
-
-  constructor() {
-  }
+  announcements: Announcement[];
+  error = '';
+  success = '';
+  constructor(private announcementsServ: AnnouncementsService) { }
 
   ngOnInit() {
-    this.announcements =
-      new Announcement({
-        id: 1,
-        // date: now(),
-        title: 'Dummy Ann 1',
-        body: 'Dummy Ann 1 body text'}
-        )
-      ;
+    this.getAnnouncements();
   }
-
+  getAnnouncements(): void {
+    this.announcementsServ.getAll().subscribe(
+      (res: Announcement[]) => {
+        console.log('This Works');
+        this.announcements = res;
+      },
+        (err) => {
+          this.error = err;
+        }
+    );
+  }
 }
+
