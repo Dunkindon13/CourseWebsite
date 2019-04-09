@@ -6,11 +6,12 @@ import {TeachersHomeComponent} from './views/teachers-home/teachers-home.compone
 import {StudentsHomeComponent} from './views/students-home/students-home.component';
 import {AnnouncementsComponent} from './views/announcements/announcements.component';
 import {AssignmentsComponent} from './views/assignments/assignments.component';
+import {AuthenticationGuard} from './controllers/authentication.guard';
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'teacher', component: TeachersHomeComponent},
+  {path: 'teacher', component: TeachersHomeComponent, canLoad: [AuthenticationGuard]},
   {path: 'student', component: StudentsHomeComponent},
   {path: 'assignments', component: AssignmentsComponent},
   {path: '**', component: AnnouncementsComponent}
