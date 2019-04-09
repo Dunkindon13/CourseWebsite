@@ -1,1 +1,24 @@
 <p *ngFor="let assignment of assignments">{{assignment.id}}</p>
+
+
+<h3>Assignments</h3>
+
+<mat-accordion multi="true" class="my-headers-align">
+  <div *ngFor="let assignment of assignments | reverse;">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ID: {{assignment.id}}
+        </mat-panel-title>
+        <mat-panel-title>
+          Date: {{assignment.date}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Subject: {{assignment.title}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="showSummary" [innerHTML]="assignment.body"></div>
+      <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
+    </mat-expansion-panel>
+  </div>
+</mat-accordion>
