@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 09, 2019 at 06:51 PM
+-- Generation Time: Apr 09, 2019 at 10:25 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -65,6 +65,17 @@ CREATE TABLE `assignments` (
   `coursePercentage` double NOT NULL,
   `studentGrade` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `assignments`
+--
+
+INSERT INTO `assignments` (`id`, `userid`, `teachercopy`, `class`, `releaseDate`, `dueDate`, `title`, `body`, `coursePercentage`, `studentGrade`) VALUES
+(1, 1, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 59),
+(1, 1, 1, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 83),
+(1, 2, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 90),
+(1, 3, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 75),
+(1, 4, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 72);
 
 -- --------------------------------------------------------
 
