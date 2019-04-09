@@ -1,3 +1,31 @@
-<p>
-  login works!
-</p>
+<div class="login-page">
+  <div class="login-spacer"></div>
+  <div class="login-container">
+    <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+      <i id="lock-icon" class="material-icons">lock</i>
+    </div>
+    <h2 class="card-heading">
+      Login
+    </h2>
+
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Teacher</mat-radio-button>
+      <mat-radio-button value="2">Students</mat-radio-button>
+    </mat-radio-group>
+
+    <form class="login-form">
+      <mat-form-field>
+        <input matInput placeholder="Username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type='password' placeholder="Password">
+      </mat-form-field>
+    </form>
+    <div class="buttons">
+      <div class="login">
+        <button mat-raised-button color="primary">Login</button>
+      </div>
+
+    </div>
+  </div>
+</div>
