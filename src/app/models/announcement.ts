@@ -9,7 +9,7 @@ export class Announcement {
     constructor(args) {
         if (args) {
             this.id = args.id;
-            this.teacherid = args.teacherid;
+            this.teacherid = args.teacherID;
             this.date = args.date;
             this.title = args.title;
             this.body = args.body;

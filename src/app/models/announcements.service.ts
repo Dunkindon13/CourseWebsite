@@ -9,7 +9,7 @@ import {catchError, map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AnnouncementsService {
-  baseUrl = 'http://localhost/coursewebsite/assets/api';
+  baseUrl = 'http://localhost/coursewebsite/src/assets/api';
   announcements: Announcement[];
   constructor(private http: HttpClient) { }
 
