@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 09, 2019 at 10:25 PM
+-- Generation Time: Apr 10, 2019 at 12:27 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -68,14 +68,29 @@ CREATE TABLE `assignments` (
 
 --
 -- Dumping data for table `assignments`
---
+-- Note: If studentGrade == -1, assignment is unsubmitted. If studentGrade == -2, assignment is submitted but not yet graded.
 
 INSERT INTO `assignments` (`id`, `userid`, `teachercopy`, `class`, `releaseDate`, `dueDate`, `title`, `body`, `coursePercentage`, `studentGrade`) VALUES
 (1, 1, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 59),
 (1, 1, 1, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 83),
 (1, 2, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 90),
 (1, 3, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 75),
-(1, 4, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 72);
+(1, 4, 0, 'COMP201', '2019-01-01', '2019-02-01', 'Assignment1', 'This is the first Assignment', 20, 72),
+(2, 1, 0, 'COMP201', '2019-03-25', '2019-04-15', 'Build A Fully-Functioning Website', 'Aliquam feugiat nisl ac orci mattis, in viverra arcu auctor. Aenean ac velit posuere, dictum est tristique, condimentum dui. Ut vitae magna eget est ornare tempus quis at velit. Nunc fringilla diam risus, sit amet scelerisque magna placerat hendrerit.', 30, -2),
+(2, 1, 1, 'COMP201', '2019-03-25', '2019-04-15', 'Build A Fully-Functioning Website', 'Aliquam feugiat nisl ac orci mattis, in viverra arcu auctor. Aenean ac velit posuere, dictum est tristique, condimentum dui. Ut vitae magna eget est ornare tempus quis at velit. Nunc fringilla diam risus, sit amet scelerisque magna placerat hendrerit.', 30, -1),
+(2, 2, 0, 'COMP201', '2019-03-25', '2019-04-15', 'Build A Fully-Functioning Website', 'Aliquam feugiat nisl ac orci mattis, in viverra arcu auctor. Aenean ac velit posuere, dictum est tristique, condimentum dui. Ut vitae magna eget est ornare tempus quis at velit. Nunc fringilla diam risus, sit amet scelerisque magna placerat hendrerit.', 30, -1),
+(2, 3, 0, 'COMP201', '2019-03-25', '2019-04-15', 'Build A Fully-Functioning Website', 'Aliquam feugiat nisl ac orci mattis, in viverra arcu auctor. Aenean ac velit posuere, dictum est tristique, condimentum dui. Ut vitae magna eget est ornare tempus quis at velit. Nunc fringilla diam risus, sit amet scelerisque magna placerat hendrerit.', 30, -1),
+(2, 4, 0, 'COMP201', '2019-03-25', '2019-04-15', 'Build A Fully-Functioning Website', 'Aliquam feugiat nisl ac orci mattis, in viverra arcu auctor. Aenean ac velit posuere, dictum est tristique, condimentum dui. Ut vitae magna eget est ornare tempus quis at velit. Nunc fringilla diam risus, sit amet scelerisque magna placerat hendrerit.', 30, -1),
+(3, 1, 0, 'DATA301', '2019-03-01', '2019-04-01', 'Database Questionnaire', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 15, 65),
+(3, 2, 0, 'DATA301', '2019-03-01', '2019-04-01', 'Database Questionnaire', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 15, 75),
+(3, 2, 1, 'DATA301', '2019-03-01', '2019-04-01', 'Database Questionnaire', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 15, 85),
+(3, 3, 0, 'DATA301', '2019-03-01', '2019-04-01', 'Database Questionnaire', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 15, 89),
+(3, 4, 0, 'DATA301', '2019-03-01', '2019-04-01', 'Database Questionnaire', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 15, 82),
+(4, 1, 0, 'DATA301', '2019-04-15', '2019-04-29', 'Database Joining and Transactions', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 35, -1),
+(4, 2, 0, 'DATA301', '2019-04-15', '2019-04-29', 'Database Joining and Transactions', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 35, -1),
+(4, 2, 1, 'DATA301', '2019-04-15', '2019-04-29', 'Database Joining and Transactions', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 35, -1),
+(4, 3, 0, 'DATA301', '2019-04-15', '2019-04-29', 'Database Joining and Transactions', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 35, -1),
+(4, 4, 0, 'DATA301', '2019-04-15', '2019-04-29', 'Database Joining and Transactions', 'Morbi molestie pretium purus at finibus. Fusce ultricies neque at feugiat semper. Morbi tincidunt nisi nec libero rhoncus venenatis.', 35, -1);
 
 -- --------------------------------------------------------
 
