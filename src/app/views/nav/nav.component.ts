@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 export class NavComponent {
 
   title = 'CourWeb';
-  teacherLoggedIn = false;
+  teacherLoggedIn = true;
   studentLoggedIn = true;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
