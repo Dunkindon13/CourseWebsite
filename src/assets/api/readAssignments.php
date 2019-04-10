@@ -10,21 +10,17 @@
 
 require 'connect.php';
 $assignments = [];
-$query = "SELECT * FROM assignments";
+$query = "SELECT * FROM assignments_table";
 
 if($result = mysqli_query($connection, $query)) {
     $record = 0;
     while($row = mysqli_fetch_assoc($result)) {
-        $assignments[$record]['userid'] = $row['userid'];
         $assignments[$record]['id'] = $row['id'];
-        $assignments[$record]['teachercopy'] = $row['teachercopy'];
-        $assignments[$record]['class'] = $row['class'];
-        $assignments[$record]['releaseDate'] = $row['releaseDate'];
-        $assignments[$record]['dueDate'] = $row['dueDate'];
-        $assignments[$record]['title'] = $row['title'];
-        $assignments[$record]['body'] = $row['body'];
-        $assignments[$record]['weight'] = $row['weight'];
-        $assignments[$record]['studentGrade'] = $row['studentGrade'];
+        $assignments[$record]['subject'] = $row['subject'];
+        $assignements[$record]['information'] = $row['information'];
+        $assignments[$record]['releaseDate'] = $row['release_date'];
+        $assignments[$record]['dueDate'] = $row['due_date'];
+        $assignments[$record]['weight'] = $row['grade_weight'];
 
 
         $record++;
