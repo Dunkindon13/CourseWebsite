@@ -12,6 +12,9 @@ export class AssignmentsComponent implements OnInit {
     error = '';
     success = '';
 
+    teacherIsLoggedIn = true;
+    studentIsLoggedIn = true;
+
     constructor(private assignmentsServ: AssignmentsService) {
     }
 
