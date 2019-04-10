@@ -21,7 +21,7 @@ import {
   MatIconModule,
   MatListModule,
   MatInputModule,
-  MatRadioModule, MatNativeDateModule
+  MatRadioModule, MatNativeDateModule, MatCardModule
 } from '@angular/material';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -30,6 +30,7 @@ import { ReversePipe } from './controllers/reverse.pipe';
 import { AssignmentsComponent } from './views/assignments/assignments.component';
 import { AddAssignmentComponent } from './views/add-assignment/add-assignment.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { DummyComponent } from './dummy/dummy.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     NavComponent,
     ReversePipe,
     AssignmentsComponent,
-    AddAssignmentComponent
+    AddAssignmentComponent,
+    DummyComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +67,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

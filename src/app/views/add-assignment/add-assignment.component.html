@@ -1,28 +1,30 @@
 <h3>Add Assignment</h3>
 
-<form class="example-form">
+<form (ngSubmit)="onSubmit()" [formGroup]="addAssignmentForm" fxLayout="column" fxLayoutAlign="center center">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Subject" value="">
+    <input matInput formControlName="title" placeholder="Subject">
   </mat-form-field>
 
 <div class="example-full-width">
   <mat-form-field>
-    <input matInput [matDatepicker]="releaseDate" placeholder="Release Date" [formControl]="date">
+    <input matInput formControlName="releaseDate" [matDatepicker]="releaseDate" placeholder="Release Date">
     <mat-datepicker-toggle matSuffix [for]="releaseDate"></mat-datepicker-toggle>
     <mat-datepicker #releaseDate></mat-datepicker>
   </mat-form-field>
 
 
   <mat-form-field>
-    <input matInput [matDatepicker]="DueDate" placeholder="Due Date" [formControl]="date">
+    <input matInput formControlName="dueDate"[matDatepicker]="DueDate" placeholder="Due Date">
     <mat-datepicker-toggle matSuffix [for]="DueDate"></mat-datepicker-toggle>
     <mat-datepicker #DueDate></mat-datepicker>
   </mat-form-field>
 </div>
 
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Assignment Description"></textarea>
+    <textarea matInput formControlName="body" placeholder="Assignment Description"></textarea>
   </mat-form-field>
 
-  <button mat-raised-button color="accent">Add</button>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
 </form>

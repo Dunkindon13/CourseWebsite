@@ -28,4 +28,10 @@ export class AssignmentsService {
         console.log(error);
         return throwError('Error! There must be some mistake in the code.');
     }
+
+    addAssignment(assignment: Assignment) {
+      console.log("Add Assignment called in the service!");
+      return this.http.post(`${this.baseUrl}/addAssignment`, assignment);
+
+    }
 }
