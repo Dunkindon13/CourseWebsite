@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Assignment} from './assignment';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 
@@ -24,14 +24,21 @@ export class AssignmentsService {
             catchError(this.handleError));
     }
 
+
+
+    addAssignment(assignment: Assignment): Observable<any> {
+      return this.http.post(`${this.baseUrl}/addAssignment`, {data: assignment}).pipe(
+          map((res) => {
+              this.assignments.push(res['data']);
+              console.log(this.assignments);
+              return this.assignments;
+          }),
+          catchError(this.handleError));
+
+    }
+
     private handleError(error: HttpErrorResponse) {
         console.log(error);
         return throwError('Error! There must be some mistake in the code.');
-    }
-
-    addAssignment(assignment: Assignment) {
-      console.log("Add Assignment called in the service!");
-      return this.http.post(`${this.baseUrl}/addAssignment`, assignment);
-
     }
 }
