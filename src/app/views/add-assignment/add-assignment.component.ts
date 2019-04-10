@@ -5,6 +5,7 @@ import {FormControl} from '@angular/forms';
 import {AssignmentsService} from '../../models/assignments.service';
 import {ActivatedRoute} from '@angular/router';
 import {Assignment} from '../../models/assignment';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-add-assignment',
@@ -23,7 +24,7 @@ export class AddAssignmentComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private assignmentServ: AssignmentsService,
-              private route: ActivatedRoute) { }
+              private router: Router) { }
 
   ngOnInit() {
 
@@ -52,5 +53,8 @@ export class AddAssignmentComponent implements OnInit {
           this.error = err;
         }
     );
+
+    this.router.navigateByUrl('/assignments');
+
   }
 }
