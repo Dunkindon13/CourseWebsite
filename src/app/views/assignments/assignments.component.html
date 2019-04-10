@@ -2,7 +2,7 @@
 
 <h3>Assignments</h3>
 <p *ngIf="teacherIsLoggedIn">
-<button mat-raised-button color="accent">Add assignment</button>
+<button mat-raised-button color="accent" routerLink="/addassignment">Add assignment</button>
 </p>
 <mat-accordion multi="true" class="my-headers-align">
   <div *ngFor="let assignment of assignments | reverse;">
