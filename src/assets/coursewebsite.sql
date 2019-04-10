@@ -175,12 +175,6 @@ ALTER TABLE `submitted_assignments`
   ADD PRIMARY KEY (`assignment_id`,`student_id`);
 
 --
--- Indexes for table `teachers`
---
-ALTER TABLE `teachers`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`

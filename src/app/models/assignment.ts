@@ -1,8 +1,6 @@
 export class Assignment {
     userid: number;
     id: number;
-    teacherCopy: number;
-    class: string;
     releaseDate: Date;
     dueDate: Date;
     title: string;
@@ -15,8 +13,6 @@ export class Assignment {
         if (args) {
             this.userid = args.userid;
             this.id = args.id;
-            this.teacherCopy = args.teachercopy;
-            this.class = args.class;
             this.releaseDate = args.releaseDate;
             this.dueDate = args.dueDate;
             this.title = args.title;
