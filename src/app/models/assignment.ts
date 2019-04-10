@@ -7,7 +7,7 @@ export class Assignment {
     dueDate: Date;
     title: string;
     body: string;
-    coursePercentage: number;
+    weight: number;
     studentGrade: number;
 
 

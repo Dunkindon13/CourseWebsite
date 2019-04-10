@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 10, 2019 at 07:21 PM
+-- Generation Time: Apr 10, 2019 at 08:00 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -101,35 +101,26 @@ CREATE TABLE `read_announcements` (
 CREATE TABLE `submitted_assignments` (
   `assignment_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
-  `date` date NOT NULL,
+  `date` date DEFAULT NULL,
   `submission` longtext NOT NULL,
   `grade` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `submitted_assignments`
+--
+
+INSERT INTO `submitted_assignments` (`assignment_id`, `student_id`, `date`, `submission`, `grade`) VALUES
+(1, 3, '2019-02-01', 'Cras id velit felis. Donec sollicitudin orci eu libero congue, sed euismod magna euismod. Sed placerat tristique placerat. Proin id ligula finibus, viverra leo in, aliquam nulla. Integer et augue in nulla pharetra pellentesque. Praesent varius ultricies ipsum sit amet porttitor.', 75),
+(1, 4, '2019-02-01', 'Cras id velit felis. Donec sollicitudin orci eu libero congue, sed euismod magna euismod. Sed placerat tristique placerat. Proin id ligula finibus, viverra leo in, aliquam nulla. Integer et augue in nulla pharetra pellentesque. Praesent varius ultricies ipsum sit amet porttitor.', 85),
+(1, 5, '2019-01-31', 'Cras id velit felis. Donec sollicitudin orci eu libero congue, sed euismod magna euismod. Sed placerat tristique placerat. Proin id ligula finibus, viverra leo in, aliquam nulla. Integer et augue in nulla pharetra pellentesque. Praesent varius ultricies ipsum sit amet porttitor.', 95),
+(1, 6, '2019-02-03', 'Cras id velit felis. Donec sollicitudin orci eu libero congue, sed euismod magna euismod. Sed placerat tristique placerat. Proin id ligula finibus, viverra leo in, aliquam nulla. Integer et augue in nulla pharetra pellentesque. Praesent varius ultricies ipsum sit amet porttitor.', 67.5),
+(2, 3, '2019-02-27', 'Cras vel iaculis velit. Etiam faucibus mattis odio, eget pellentesque lorem volutpat at. Mauris posuere nisi eget ex eleifend venenatis. Vivamus feugiat augue orci, non ultrices elit placerat quis.', 72.6),
+(2, 5, '2019-02-27', 'Curabitur sit amet turpis nec quam viverra elementum sed ac quam. Curabitur maximus condimentum tristique. Curabitur aliquet pharetra velit, non luctus mauris laoreet ut. Nam ut facilisis turpis.', 95.45),
+(2, 6, '2019-02-26', 'Aliquam auctor enim quis pulvinar porta. Quisque pharetra mollis justo eu consectetur. Pellentesque porttitor euismod ultrices. Curabitur lobortis dapibus risus at consectetur.', 82);
+
 -- --------------------------------------------------------
 
---
--- Table structure for table `teachers`
---
-
-CREATE TABLE `teachers` (
-  `id` int(11) NOT NULL,
-  `username` varchar(128) NOT NULL,
-  `password` varchar(32) NOT NULL,
-  `name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `teachers`
---
-
-INSERT INTO `teachers` (`id`, `username`, `password`, `name`) VALUES
-(1, 'teacher1', '12345678', 'Alan Adams'),
-(2, 'teacher2', '12345678', 'Bryan Brown'),
-(3, 'teacher3', '12345678', 'Carol Carter'),
-(4, 'teacher4', '12345678', 'Diana Doughty');
-
--- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
