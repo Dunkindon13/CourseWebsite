@@ -21,7 +21,7 @@ export class Assignment {
             this.dueDate = args.dueDate;
             this.title = args.title;
             this.body = args.body;
-            this.coursePercentage = args.coursePercentage;
+            this.weight = args.weight;
             this.studentGrade = args.studentGrade;
         }
     }

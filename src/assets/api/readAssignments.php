@@ -23,7 +23,7 @@ if($result = mysqli_query($connection, $query)) {
         $assignments[$record]['dueDate'] = $row['dueDate'];
         $assignments[$record]['title'] = $row['title'];
         $assignments[$record]['body'] = $row['body'];
-        $assignments[$record]['coursePercentage'] = $row['coursePercentage'];
+        $assignments[$record]['weight'] = $row['weight'];
         $assignments[$record]['studentGrade'] = $row['studentGrade'];
 
 
