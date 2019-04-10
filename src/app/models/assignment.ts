@@ -13,8 +13,8 @@ export class Assignment {
             this.id = args.id;
             this.releaseDate = args.releaseDate;
             this.dueDate = args.dueDate;
-            this.title = args.subject;
-            this.body = args.information;
+            this.title = args.title;
+            this.body = args.body;
             this.weight = args.weight;
         }
     }
