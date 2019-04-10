@@ -9,7 +9,7 @@
 
 require 'connect.php';
 $announcements = [];
-$query = "SELECT * FROM announcements";
+$query = "SELECT * FROM announcements_table";
 
 if($result = mysqli_query($connection, $query)) {
     $record = 0;
