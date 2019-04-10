@@ -7,6 +7,7 @@ import {StudentsHomeComponent} from './views/students-home/students-home.compone
 import {AnnouncementsComponent} from './views/announcements/announcements.component';
 import {AssignmentsComponent} from './views/assignments/assignments.component';
 import {AuthenticationGuard} from './controllers/authentication.guard';
+import {AddAssignmentComponent} from './views/add-assignment/add-assignment.component';
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'teacher', component: TeachersHomeComponent, canLoad: [AuthenticationGuard]},
   {path: 'student', component: StudentsHomeComponent},
   {path: 'assignments', component: AssignmentsComponent},
+  {path: 'addassignment', component: AddAssignmentComponent},
   {path: '**', component: AnnouncementsComponent}
 ];
 
