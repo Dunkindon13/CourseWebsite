@@ -24,7 +24,7 @@ export class AssignmentsService {
             catchError(this.handleError));
     }
 
-    getSubmittedAssignments() git
+    getSubmittedAssignments()
 
     private handleError(error: HttpErrorResponse) {
         console.log(error);
