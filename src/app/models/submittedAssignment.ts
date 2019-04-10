@@ -1,21 +1,19 @@
 export class Assignment {
-    id: number;
-    releaseDate: Date;
-    dueDate: Date;
-    title: string;
-    body: string;
-    weight: number;
+    assignment_id: number;
+    student_id: number;
+    date: Date;
+    submission: string;
+    grade: number;
 
 
     constructor(args) {
         if (args) {
 
-            this.id = args.id;
-            this.releaseDate = args.releaseDate;
-            this.dueDate = args.dueDate;
-            this.title = args.subject;
-            this.body = args.information;
-            this.weight = args.weight;
+            this.assignment_id = args.assignment_id;
+            this.student_id = args.student_id;
+            this.date = args.date;
+            this.submission = args.submission;
+            this.grade = args.grade;
         }
     }
 }
