@@ -1,0 +1,15 @@
+mat-panel-title {
+  width: 15%;
+}
+
+mat-panel-description {
+  width: 70%;
+}
+.inline{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 3%;
+    margin-left: 3%;
+}

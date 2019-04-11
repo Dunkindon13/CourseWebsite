@@ -1,5 +1,9 @@
+<div class="inline">
 <h3>Announcements </h3>
-
+<p *ngIf="teacherIsLoggedIn">
+  <button mat-raised-button color="accent" routerLink="/addannouncement">Add announcement</button>
+</p>
+</div>
 <mat-accordion multi="true" class="my-headers-align">
   <div *ngFor="let announcement of announcements | reverse;">
     <mat-expansion-panel>
