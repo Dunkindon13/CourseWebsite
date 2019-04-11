@@ -13,6 +13,7 @@ import { NavComponent } from './views/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
 
 import {
   MatToolbarModule,
@@ -32,6 +33,11 @@ import { AddAssignmentComponent } from './views/add-assignment/add-assignment.co
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DummyComponent } from './dummy/dummy.component';
 
+import { AddAnnouncementComponent } from './views/add-announcement/add-announcement.component';
+import { AddGradeComponent } from './views/add-grade/add-grade.component';
+import { SubmitAssignmentComponent } from './views/submit-assignment/submit-assignment.component';
+
+
 
 @NgModule({
   declarations: [
@@ -44,7 +50,11 @@ import { DummyComponent } from './dummy/dummy.component';
     ReversePipe,
     AssignmentsComponent,
     AddAssignmentComponent,
-    DummyComponent
+    DummyComponent,
+
+    AddAnnouncementComponent,
+    AddGradeComponent,
+    SubmitAssignmentComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +81,8 @@ import { DummyComponent } from './dummy/dummy.component';
     MatCardModule,
     MatStepperModule,
     MatSnackBarModule,
+    MatTableModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

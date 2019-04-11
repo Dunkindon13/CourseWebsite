@@ -5,12 +5,14 @@ import {Announcement} from '../../models/announcement';
 @Component({
   selector: 'app-announcements',
   templateUrl: './announcements.component.html',
-  styleUrls: ['./announcements.component.scss']
+  styleUrls: ['./announcements.component.css']
 })
 export class AnnouncementsComponent implements OnInit {
   announcements: Announcement[];
   error = '';
   success = '';
+  teacherIsLoggedIn = true;
+  studentIsLoggedIn = false;
   constructor(private announcementsServ: AnnouncementsService) { }
 
   ngOnInit() {

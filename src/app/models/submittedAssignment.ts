@@ -1,6 +1,6 @@
 export class SubmittedAssignment {
-    assignment_id: number;
-    student_id: number;
+    assignmentId: number;
+    studentId: number;
     date: Date;
     submission: string;
     grade: number;
@@ -9,8 +9,8 @@ export class SubmittedAssignment {
     constructor(args) {
         if (args) {
 
-            this.assignment_id = args.assignment_id;
-            this.student_id = args.student_id;
+            this.assignmentId = args.assignmentId;
+            this.studentId = args.studentId;
             this.date = args.date;
             this.submission = args.submission;
             this.grade = args.grade;
