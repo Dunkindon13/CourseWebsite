@@ -27,7 +27,7 @@ export class AssignmentsService {
 
 
     addAssignment(assignment: Assignment): Observable<any> {
-      return this.http.post(`${this.baseUrl}/addAssignment`, {data: assignment}).pipe(
+      return this.http.post(`${this.baseUrl}/addAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
           map((res) => {
               this.assignments.push(res['data']);
               return this.assignments;

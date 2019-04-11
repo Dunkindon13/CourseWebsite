@@ -1,4 +1,4 @@
-export class Assignment {
+export class SubmittedAssignment {
     assignment_id: number;
     student_id: number;
     date: Date;
