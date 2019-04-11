@@ -10,8 +10,7 @@ import {AddAssignmentComponent} from './views/add-assignment/add-assignment.comp
 import {AuthGuard} from './controllers/auth.guard';
 import {AddAnnouncementComponent} from './views/add-announcement/add-announcement.component';
 import {AddGradeComponent} from './views/add-grade/add-grade.component';
-
-
+import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assignment.component';
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
@@ -22,6 +21,8 @@ const routes: Routes = [
   {path: 'addassignment', component: AddAssignmentComponent},
   {path: 'addannouncement', component: AddAnnouncementComponent },
   {path: 'addgrade', component: AddGradeComponent },
+  {path: 'submitassignment/:id', component: SubmitAssignmentComponent},
+
   {path: '**', component: AnnouncementsComponent}
 ];
 

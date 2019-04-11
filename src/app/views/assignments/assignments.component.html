@@ -35,8 +35,10 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="showSummary" [innerHTML]="assignment.body"></div>
-         <div class="inline" *ngIf="teacherIsLoggedIn"><button mat-raised-button color="primary"routerLink="/addgrade">View Submissions</button></div>
-        <div class="inline" *ngIf="studentIsLoggedIn"><button mat-raised-button color="warn">Submit assignment</button></div>
+
+         <div class="inline" *ngIf="teacherIsLoggedIn"><button mat-raised-button color="primary">View Submissions</button></div>
+        <div class="inline" *ngIf="studentIsLoggedIn"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
+
        <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
     </mat-expansion-panel>
   </div>
