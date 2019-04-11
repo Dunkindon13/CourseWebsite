@@ -21,7 +21,7 @@ import {
   MatIconModule,
   MatListModule,
   MatInputModule,
-  MatRadioModule, MatNativeDateModule, MatCardModule
+  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule,
 } from '@angular/material';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -68,7 +68,9 @@ import { DummyComponent } from './dummy/dummy.component';
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCardModule
+    MatCardModule,
+    MatStepperModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

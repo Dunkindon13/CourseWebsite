@@ -1,22 +1,48 @@
 import {Injectable} from '@angular/core';
-import {HttpHeaders} from '@angular/common/http';
+import {HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {HttpClient} from '@angular/common/http';
+import {Assignment} from './assignment';
+import {Observable, throwError} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class AuthService {
-    isLoggedIn = false;
-
-    constructor() {
-    }
+    loggedIn = false;
 
     login() {
-        this.isLoggedIn = true;
+        this.loggedIn = true;
     }
 
     logout() {
-        this.isLoggedIn = false;
+        this.loggedIn = false;
+    }
+
+    isTeacher() {
+        const isUserTeacher = new Promise(
+            (resolve) => {
+                resolve(this.loggedIn);
+            }
+        );
+        return isUserTeacher;
+    }
+
+    isStudent() {
+        const isUserStudent = new Promise(
+            (resolve) => {
+                resolve(this.loggedIn);
+            }
+        );
+        return isUserStudent;
+    }
+
+    isAdmin() {
+        const isUserAdmin = new Promise(
+            (resolve) => {
+                resolve(this.loggedIn);
+            }
+        );
+        return isUserAdmin;
     }
 }

@@ -1,5 +1,85 @@
 <h3>Add Assignment</h3>
 
+<!--
+<mat-vertical-stepper>
+
+    <mat-step label="Assignment name">
+        <form ngForm #addAssignmentForm class="form">
+
+            <mat-form-field>
+                <input matInput #title
+                       [(ngModel)]="title" placeholder="Please enter Assignment title"
+                       title="title">
+            </mat-form-field>
+
+            <button mat-stroked-button color="primary" matStepperNext>Next</button>
+
+        </form>
+    </mat-step>
+
+    <mat-step label="Release date">
+        <form class="form">
+            <mat-form-field>
+                <input matInput
+                       [matDatepicker]="releaseDate"
+                       [(ngModel)]="releaseDate"
+                       releaseDate="releaseDate" placeholder="Release Date">
+                <mat-datepicker-toggle matSuffix
+                                       [for]="releaseDate"></mat-datepicker-toggle>
+                <mat-datepicker #releaseDate></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-stroked-button color="primary" matStepperNext>Next</button>
+            <button mat-stroked-button color="warn" matStepperPrevious>Back</button>
+        </form>
+    </mat-step>
+
+    <mat-step label="Due date">
+        <form class="form">
+            <mat-form-field>
+                <input matInput
+                       [matDatepicker]="dueDate"
+                       [(ngModel)]="dueDate"
+                       dueDate="dueDate" placeholder="Due Date">
+                <mat-datepicker-toggle matSuffix
+                                       [for]="dueDate"></mat-datepicker-toggle>
+                <mat-datepicker #dueDate></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-stroked-button color="primary" matStepperNext>Next</button>
+            <button mat-stroked-button color="warn" matStepperPrevious>Back</button>
+        </form>
+    </mat-step>
+
+    <mat-step label="Assignment body">
+        <form ngForm #addAssignmentForm class="form">
+
+            <mat-form-field>
+                <input matInput #body
+                       [(ngModel)]="body" placeholder="Please enter Assignment description"
+                       body="body">
+            </mat-form-field>
+
+            <button mat-stroked-button color="primary" matStepperNext>Next</button>
+            <button mat-stroked-button color="warn" matStepperPrevious>Back</button>
+
+        </form>
+    </mat-step>
+
+    <mat-step label="Submit">
+        <form class="form">
+            <button mat-stroked-button color="warn" matStepperPrevious>Back</button>
+            <button mat-stroked-button
+                    (click)="onSubmit(); addAssignmentForm.reset()"
+                    color="primary">Submit
+            </button>
+        </form>
+    </mat-step>
+
+</mat-vertical-stepper>
+-->
+
+
 <form (ngSubmit)="onSubmit()" [formGroup]="addAssignmentForm" fxLayout="column" fxLayoutAlign="center center">
   <mat-form-field class="example-full-width">
     <input matInput formControlName="title" placeholder="Subject">
