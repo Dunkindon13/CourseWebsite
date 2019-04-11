@@ -1,0 +1,19 @@
+<h3>Submit Assignment </h3>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="submitAssignmentForm" fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput formControlName="submission" placeholder="Post Text to Submit"></textarea>
+  </mat-form-field>
+
+  <!--<mat-card-actions>-->
+    <!--<br>-->
+    <!--<button mat-raised-button color="accent" type="button" (click)="fileInput.click()">Upload File</button>-->
+  <!--</mat-card-actions>-->
+
+  <mat-card-actions>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+
+</form>

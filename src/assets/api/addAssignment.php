@@ -18,9 +18,7 @@ $postdata = file_get_contents("php://input");
 //    if(trim($request->data->subject) === '' || trim($request->data->body) === '')
 //    {
 //        return http_response_code(400);
-//    }
-
-print_r($request);
+//
 
 
     $subject = mysqli_real_escape_string($connection, trim($request->data->title));
@@ -29,8 +27,6 @@ print_r($request);
     $release_date = mysqli_real_escape_string($connection, trim($request->data->releaseDate));
     $weight = mysqli_real_escape_string($connection, trim($request->data->weight));
 
-$arr = [$subject, $information, $due_date, $release_date, $weight];
-print_r($arr);
 
     $sql = "INSERT INTO `assignments_table` (`subject`, `information`, `release_date`, `due_date`, `grade_weight`) VALUES ('$subject', '$information', '$release_date',  '$due_date', '$weight')";
 

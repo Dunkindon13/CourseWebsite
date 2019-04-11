@@ -3,6 +3,7 @@ import {Assignment} from './assignment';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
+import {SubmittedAssignment} from './submittedAssignment';
 
 @Injectable({
     providedIn: 'root'
@@ -11,6 +12,7 @@ export class AssignmentsService {
 
     baseUrl = 'http://localhost/coursewebsite/src/assets/api';
     assignments: Assignment[];
+    submittedAssignments: SubmittedAssignment[];
 
     constructor(private http: HttpClient) {
     }
@@ -34,6 +36,17 @@ export class AssignmentsService {
           }),
           catchError(this.handleError));
 
+    }
+
+    submitAssignment(assignment: SubmittedAssignment): Observable<any> {
+        return this.http.post( `${this.baseUrl}/submitAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
+            map((res) => {
+                this.submittedAssignments.push(res['data']);
+                return this.submittedAssignments;
+
+            }),
+            catchError(this.handleError)
+        );
     }
 
     private handleError(error: HttpErrorResponse) {

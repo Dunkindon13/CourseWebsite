@@ -31,6 +31,7 @@ import { AssignmentsComponent } from './views/assignments/assignments.component'
 import { AddAssignmentComponent } from './views/add-assignment/add-assignment.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { DummyComponent } from './dummy/dummy.component';
+import { SubmitAssignmentComponent } from './views/submit-assignment/submit-assignment.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { DummyComponent } from './dummy/dummy.component';
     ReversePipe,
     AssignmentsComponent,
     AddAssignmentComponent,
-    DummyComponent
+    DummyComponent,
+    SubmitAssignmentComponent
   ],
   imports: [
     BrowserModule,

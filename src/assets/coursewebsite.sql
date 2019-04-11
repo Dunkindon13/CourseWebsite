@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 10, 2019 at 08:00 PM
+-- Generation Time: Apr 11, 2019 at 11:44 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -78,7 +78,18 @@ INSERT INTO `assignments_table` (`id`, `subject`, `information`, `release_date`,
 (1, 'Front End', 'Nullam quis vulputate urna. Sed pellentesque, arcu id faucibus accumsan, ex tortor dictum arcu, eu molestie magna odio id nibh.', '2019-01-01', '2019-02-01', 20),
 (2, 'Back End', 'Quisque at quam eu ligula rhoncus condimentum bibendum ac libero. Suspendisse in elit euismod, vestibulum turpis eu, pulvinar magna. In in hendrerit risus.', '2019-02-02', '2019-02-28', 30),
 (3, 'Back End', 'Duis fringilla efficitur purus, eu fermentum arcu facilisis et. Nulla quis dictum quam, nec dapibus ipsum. Nullam ex erat, pulvinar ut dolor sit amet, semper rhoncus dolor. ', '2019-03-01', '2019-04-18', 35),
-(4, 'Front End', 'Ivamus posuere sem quis leo suscipit, id volutpat metus tristique. Nulla dictum nunc magna, a consequat eros efficitur at.', '2019-04-15', '2019-04-28', 15);
+(4, 'Front End', 'Ivamus posuere sem quis leo suscipit, id volutpat metus tristique. Nulla dictum nunc magna, a consequat eros efficitur at.', '2019-04-15', '2019-04-28', 15),
+(11, 'TESTbbb', 'TESTbbb', '2018-04-28', '2018-05-28', 80),
+(13, 'History', 'History of Canada', '2019-04-11', '2019-04-18', 0),
+(14, 'Math', 'Sample Math Assignment', '2019-04-11', '2019-04-18', 0),
+(15, '', '', '0000-00-00', '0000-00-00', 0),
+(16, 'Science', 'example', '2019-04-11', '2019-04-18', 0),
+(17, '', '', '0000-00-00', '0000-00-00', 0),
+(18, 'Math', 'Worksheet', '2019-04-11', '2019-04-18', 0),
+(19, 'bmbvhvhv', 'blah', '2019-04-11', '2019-04-18', 0),
+(20, '', '', '0000-00-00', '0000-00-00', 0),
+(21, 'dfgdfgd', 'dfgdfgdfgdf', '2019-04-25', '2019-04-26', 0),
+(22, 'Test', 'Does a blank record get produced?', '2019-04-11', '2019-04-18', 0);
 
 -- --------------------------------------------------------
 
@@ -117,7 +128,11 @@ INSERT INTO `submitted_assignments` (`assignment_id`, `student_id`, `date`, `sub
 (1, 6, '2019-02-03', 'Cras id velit felis. Donec sollicitudin orci eu libero congue, sed euismod magna euismod. Sed placerat tristique placerat. Proin id ligula finibus, viverra leo in, aliquam nulla. Integer et augue in nulla pharetra pellentesque. Praesent varius ultricies ipsum sit amet porttitor.', 67.5),
 (2, 3, '2019-02-27', 'Cras vel iaculis velit. Etiam faucibus mattis odio, eget pellentesque lorem volutpat at. Mauris posuere nisi eget ex eleifend venenatis. Vivamus feugiat augue orci, non ultrices elit placerat quis.', 72.6),
 (2, 5, '2019-02-27', 'Curabitur sit amet turpis nec quam viverra elementum sed ac quam. Curabitur maximus condimentum tristique. Curabitur aliquet pharetra velit, non luctus mauris laoreet ut. Nam ut facilisis turpis.', 95.45),
-(2, 6, '2019-02-26', 'Aliquam auctor enim quis pulvinar porta. Quisque pharetra mollis justo eu consectetur. Pellentesque porttitor euismod ultrices. Curabitur lobortis dapibus risus at consectetur.', 82);
+(2, 6, '2019-02-26', 'Aliquam auctor enim quis pulvinar porta. Quisque pharetra mollis justo eu consectetur. Pellentesque porttitor euismod ultrices. Curabitur lobortis dapibus risus at consectetur.', 82),
+(11, 4, '2018-04-29', 'Does this work?', 80),
+(12, 3, '2018-04-28', 'Its a long established...', 80),
+(12, 4, '2018-04-29', 'Does this work?', 80),
+(15, 5, '2019-04-11', 'Hello Worldddddddddddddddddddd151551', 0);
 
 -- --------------------------------------------------------
 
@@ -175,6 +190,12 @@ ALTER TABLE `submitted_assignments`
   ADD PRIMARY KEY (`assignment_id`,`student_id`);
 
 --
+-- Indexes for table `teachers`
+--
+ALTER TABLE `teachers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -194,7 +215,7 @@ ALTER TABLE `announcements_table`
 -- AUTO_INCREMENT for table `assignments_table`
 --
 ALTER TABLE `assignments_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `teachers`
@@ -217,12 +238,6 @@ ALTER TABLE `users`
 --
 ALTER TABLE `read_announcements`
   ADD CONSTRAINT `announcement_id` FOREIGN KEY (`announcement_id`) REFERENCES `announcements_table` (`id`);
-
---
--- Constraints for table `submitted_assignments`
---
-ALTER TABLE `submitted_assignments`
-  ADD CONSTRAINT `assignment_id` FOREIGN KEY (`assignment_id`) REFERENCES `assignments_table` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
