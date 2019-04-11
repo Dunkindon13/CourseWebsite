@@ -30,7 +30,6 @@ export class AssignmentsService {
       return this.http.post(`${this.baseUrl}/addAssignment`, {data: assignment}).pipe(
           map((res) => {
               this.assignments.push(res['data']);
-              console.log(this.assignments);
               return this.assignments;
           }),
           catchError(this.handleError));

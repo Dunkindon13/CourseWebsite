@@ -46,7 +46,7 @@ export class AddAssignmentComponent implements OnInit {
         (res: Assignment[]) => {
           this.assignments = res;
           this.success = 'Assignment Created Successfully!';
-
+          console.log(this.success);
           this.addAssignmentForm.reset();
         },
         (err) => {
