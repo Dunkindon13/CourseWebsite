@@ -5,18 +5,18 @@
 * Main Purpose: HTML component for filling out form to add an announcement by a teacher and submitting it to the announcement board.
 */
 
-<h3>Add Announcement</h3>
+            // Input field for Cu
+            <h3>Add Announcement</h3>
 
-<form (ngSubmit)="onSubmit()" [formGroup]="addAnnouncementForm" fxLayout="column" fxLayoutAlign="center center">
+            <form (ngSubmit)="onSubmit()" [formGroup]="addAnnouncementForm" fxLayout="column" fxLayoutAlign="center center">
 
-    <mat-form-field class="example-full-width">
-        // Input field for Subject
-        <input matInput formControlName="title" placeholder="Subject">
-    </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    // Input field for Subject
+                    <input matInput formControlName="title" placeholder="Subject">
+                </mat-form-field>
 
-    <div>
-        <mat-form-field>
-            // Input field for Current Date of announcement
+                <div>
+                    <mat-form-field>rrent Date of announcement
             <input matInput [matDatepicker]="picker" placeholder="Choose a date">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
