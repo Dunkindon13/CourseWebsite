@@ -1,65 +1,50 @@
 <h1>Checking ... </h1>
+<h2>{{assignment.id}}</h2>
+<h2>{{assignment.title}}<</h2>
+<!--<form (ngSubmit)="onSubmit()" [formGroup]="addGradeForm" fxLayout="column" fxLayoutAlign="center center">-->
+<div *ngIf="assignments">
+<div style="padding: 32px" *ngFor="let assignment of assignments">
+<p>{{assignment.id}} {{assignment.date | date: medium}} {{assignment.studentid}} {{assignment.submission}}</p>
+  <!--<div class="example-container mat-elevation-z8">-->
+    <!--&lt;!&ndash;<p *ngFor="let assignment of assignments">{{assignment.submission}}</p>&ndash;&gt;-->
+    <!--<mat-table #table [dataSource]="assignments" *ngFor="let assignment of assignments">-->
+
+      <!--&lt;!&ndash; Name Column &ndash;&gt;-->
+      <!--&lt;!&ndash;<ng-container matColumnDef="position">&ndash;&gt;-->
+        <!--&lt;!&ndash;<mat-header-cell *matHeaderCellDef> Student ID </mat-header-cell>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mat-cell> {{assignment.submission}} </mat-cell>&ndash;&gt;-->
+      <!--&lt;!&ndash;</ng-container>&ndash;&gt;-->
+
+      <!--&lt;!&ndash; Symbol Column &ndash;&gt;-->
+      <!--<ng-container matColumnDef="name">-->
+        <!--<mat-header-cell *matHeaderCellDef> Submission </mat-header-cell>-->
+        <!--<mat-cell> {{assignment.submission}} </mat-cell>-->
+      <!--</ng-container>-->
+
+      <!--<ng-container matColumnDef="grade">-->
+        <!--<mat-header-cell *matHeaderCellDef> Grade (from 0 to 100) </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element">-->
+          <!--<mat-form-field >-->
+            <!--<input matInput placeholder="Add Grade" type="number" min="0" max="100" step="1">-->
+          <!--</mat-form-field>-->
+        <!--</mat-cell>-->
+      <!--</ng-container>-->
+
+      <!--<ng-container matColumnDef="submitGrade">-->
+        <!--<mat-header-cell *matHeaderCellDef> Submit Grade </mat-header-cell>-->
+        <!--<mat-cell *matCellDef="let element">-->
+          <!--<button mat-raised-button>Save</button>-->
+        <!--</mat-cell>-->
+      <!--</ng-container>-->
 
 
-<div style="padding: 32px">
 
-  <div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="data">
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef> Student ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-      </ng-container>
-
-      <!-- Symbol Column -->
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="grade">
-        <mat-header-cell *matHeaderCellDef> Grade </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <mat-form-field >
-            <input matInput placeholder="Add Grade" type="number">
-          </mat-form-field>
-        </mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="submitGrade">
-        <mat-header-cell *matHeaderCellDef> Submit Grade </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <button mat-raised-button>Save</button>
-        </mat-cell>
-      </ng-container>
-
-
-      <!-- Comment Column -->
-      <!--<ng-container matColumnDef="comment">
-        <mat-header-cell *matHeaderCellDef> Grade </mat-header-cell>
-        <mat-cell *matCellDef="let element" [satPopoverAnchorFor]="p" (click)="p.open()">
-          <ng-container *ngIf="element.comment">
-            {{element.comment}}
-          </ng-container>
-          <span class="add-grade" *ngIf="!element.comment">
-            Add a comment
-          </span>
-
-          <sat-popover #p
-                       hasBackdrop
-                       xAlign="start"
-                       yAlign="start"
-                       (closed)="update(element, $event)">
-            <inline-edit [value]="element.comment"></inline-edit>
-          </sat-popover>
-        </mat-cell>
-      </ng-container>
--->
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
+      <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+      <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
+    <!--</mat-table>-->
 
   </div>
 
 </div>
+
+<!--</form>-->
