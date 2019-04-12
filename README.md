@@ -1,6 +1,6 @@
 # Course Website
 
-This full-fledged project, which uses the MVC design pattern, includes a front-end(Angular), back-end(PHP) and database(MySQL). It features a navbar, separate logins for teachers and students, guards, announcements board, assignments page(current and submitted) and the ability for teacher's to add/edit announcements and assignments.
+This full-fledged project, which uses the MVC design pattern, includes a front-end(Angular), back-end(PHP) and database(MySQL). It features a navbar, separate logins for teachers and students, guards, announcements board, assignments page(current and submitted) and the ability for teachers to add/edit announcements and assignments.
 
 ## Front-End
 
