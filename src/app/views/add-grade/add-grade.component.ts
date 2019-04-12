@@ -1,25 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen'},
-  {position: 2, name: 'Helium'},
-
-];
-
-
 
 
 
 @Component({
   selector: 'app-add-grade',
   templateUrl: './add-grade.component.html',
-  styleUrls: ['./add-grade.component.css']
+  styleUrls: ['./add-grade.component.css'],
 })
 
 
@@ -27,7 +14,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class AddGradeComponent  {
-  displayedColumns: string[] = ['Student ID', 'Student Name'];
+  displayedColumns: string[] = ['position', 'name', 'grade', 'submitGrade'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
   data: PeriodicElement[] = ELEMENT_DATA;
 
@@ -39,3 +26,15 @@ export class AddGradeComponent  {
 }
 
 }
+export interface PeriodicElement {
+  name: string;
+  position: number;
+
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {position: 1, name: 'Hydrogen'},
+  {position: 2, name: 'Helium'},
+  {position: 3, name: 'Lithium'},
+];
+
