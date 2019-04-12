@@ -14,6 +14,7 @@ import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assign
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
+  {path: 'announcements', component: AnnouncementsComponent},
   {path: 'login', component: LoginComponent, /*canActivate: [AuthGuard]*/},
   {path: 'teacher', component: TeachersHomeComponent, /*canActivate: [AuthGuard]*/},
   {path: 'student', component: StudentsHomeComponent},

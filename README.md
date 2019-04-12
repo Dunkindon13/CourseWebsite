@@ -1,27 +1,52 @@
-# Coursewebsite
+# Course Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.4.
+This full-fledged project, which uses the MVC design pattern, includes an API, front-end(Angular), back-end(PHP) and database(MySQL). It features a navbar, separate logins for teachers and students, guards, pipes, announcements board, assignments page(current and submitted) and the ability for teachers to add/edit announcements and assignments.
 
-## Development server
+## API End Points
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+By default, the API launches to port 4200.
 
-## Code scaffolding
+**GET**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* */api/connect*
+* */api/readAnnouncements/*
+* */api/readAssignments/*
+* */api/readSubmittedAssignments/*
+* */api/submitAssignment/*
 
-## Build
+**POST**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* */api/addAssignment* expects a JSON object with:
+  * title (string)
+  * releaseDate (Date)
+  * dueDate (Date)
+  * body (string)
+  
+* */api/submitAssignment* expects a JSON object with:
+  * Assignment ID (string)
+  * Student ID (number)
+  * Date (Date)
+  * Submission (Form Data)
 
-## Running unit tests
+## Front-End
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The front-end is based on the Course Website API, using Angular (https://github.com/angular/angular-cli, https://angular.io/) as the framework and Angular Material (https://material.angular.io/) to stylize. Upon loading the home page, a user has the ability to see the announcements board and login in to their student/teacher account. Should a user try to access a page forbidden to them, the guard implemented will kindly redirect them to their respective page/login page, depending on whether they are logged in or not.
 
-## Running end-to-end tests
+## Back-End
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+The project's back end uses PHP(https://www.php.net/) to receive, process, validate and send out requests based on form data, http requests and pull the corresponding data stored on the database.
 
-## Further help
+## Database
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+The project's database uses MySQL(https://dev.mysql.com/doc/) made up of several tables, including a table for users, roles, announcements, assignments, courses and submitted assignments.
+
+## Special Features
+
+The project featues several enhancements designed to either beautify and/or optimize the UI and UX for the user.
+These include: A navbar, stepper, date picker, custom pipe(to order announcements by most recent date) and assignments marked as "Read". 
+
+## Languages Used
+
+1) PHP
+2) TypeScript/JavaScript
+3) HTML/CSS
