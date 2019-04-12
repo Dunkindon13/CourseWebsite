@@ -1,6 +1,32 @@
 # Course Website
 
-This full-fledged project, which uses the MVC design pattern, includes a front-end(Angular), back-end(PHP) and database(MySQL). It features a navbar, separate logins for teachers and students, guards, announcements board, assignments page(current and submitted) and the ability for teachers to add/edit announcements and assignments.
+This full-fledged project, which uses the MVC design pattern, includes an API, front-end(Angular), back-end(PHP) and database(MySQL). It features a navbar, separate logins for teachers and students, guards, pipes, announcements board, assignments page(current and submitted) and the ability for teachers to add/edit announcements and assignments.
+
+## API End Points
+
+By default, the API launches to port 4200.
+
+**GET**
+
+* */api/connect*
+* */api/readAnnouncements/*
+* */api/readAssignments/*
+* */api/readSubmittedAssignments/*
+* */api/submitAssignment/*
+
+**POST**
+
+* */api/addAssignment* expects a JSON object with:
+  * title (string)
+  * releaseDate (Date)
+  * dueDate (Date)
+  * body (string)
+  
+  * */api/submitAssignment* expects a JSON object with:
+  * Assignment ID (string)
+  * Student ID (number)
+  * Date (Date)
+  * Submission (Form Data)
 
 ## Front-End
 
@@ -17,7 +43,7 @@ The project's database uses MySQL(https://dev.mysql.com/doc/) made up of several
 ## Special Features
 
 The project featues several enhancements designed to either beautify and/or optimize the UI and UX for the user.
-These include: A navbar, stepper, date picker and assignments marked as "Read". 
+These include: A navbar, stepper, date picker, custom pipe(to order announcements by most recent date) and assignments marked as "Read". 
 
 ## Languages Used
 
