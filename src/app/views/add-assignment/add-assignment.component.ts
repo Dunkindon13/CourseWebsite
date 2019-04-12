@@ -15,6 +15,7 @@ import {Router} from '@angular/router';
 export class AddAssignmentComponent implements OnInit {
 
     assignments: Assignment[];
+    today = new Date();
     addAssignmentForm = this.fb.group({
         title: [null],
         releaseDate: [null],

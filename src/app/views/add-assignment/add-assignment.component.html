@@ -87,7 +87,7 @@
 
 <div class="example-full-width">
   <mat-form-field>
-    <input matInput formControlName="releaseDate" [matDatepicker]="releaseDate" placeholder="Release Date">
+    <input matInput formControlName="releaseDate" [min]="today" [matDatepicker]="releaseDate" placeholder="Release Date">
     <mat-datepicker-toggle matSuffix [for]="releaseDate"></mat-datepicker-toggle>
     <mat-datepicker #releaseDate></mat-datepicker>
   </mat-form-field>
