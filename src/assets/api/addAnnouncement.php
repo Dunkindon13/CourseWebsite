@@ -11,7 +11,7 @@ $request = json_decode($postdata);
         echo "Connected!";
     }
 
-$teacherID = mysqli_real_escape_string($connection, trim($request->data->teacherID));
+$teacherID = mysqli_real_escape_string($connection, trim($request->data->teacherid));
 $date = mysqli_real_escape_string($connection, trim($request->data->date));
 $title = mysqli_real_escape_string($connection, trim($request->data->title));
 $body = mysqli_real_escape_string($connection, trim($request->data->body));

@@ -34,10 +34,10 @@ export class AddAnnouncementComponent implements OnInit {
     // alert('Thanks!');
     // console.log(this.addAnnouncementForm);
     const args = {
+      teacherID: 77,
       title: this.addAnnouncementForm.value.title,
       date: this.addAnnouncementForm.value.date,
-      body: this.addAnnouncementForm.value.body,
-      teacherID: 77
+      body: this.addAnnouncementForm.value.body
     };
 
     const announcement = new Announcement(args);
