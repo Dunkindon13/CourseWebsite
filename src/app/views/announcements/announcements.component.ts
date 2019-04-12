@@ -13,11 +13,13 @@ export class AnnouncementsComponent implements OnInit {
   success = '';
   teacherIsLoggedIn = true;
   studentIsLoggedIn = false;
+
   constructor(private announcementsServ: AnnouncementsService) { }
 
   ngOnInit() {
     this.getAnnouncements();
   }
+
   getAnnouncements(): void {
     this.announcementsServ.getAll().subscribe(
       (res: Announcement[]) => {

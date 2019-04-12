@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 11, 2019 at 11:44 PM
+-- Generation Time: Apr 12, 2019 at 08:03 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -21,14 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `coursewebsite`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `announcements`
---
--- Error reading structure for table coursewebsite.announcements: #1932 - Table 'coursewebsite.announcements' doesn't exist in engine
--- Error reading data for table coursewebsite.announcements: #1064 - You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `coursewebsite`.`announcements`' at line 1
 
 -- --------------------------------------------------------
 
@@ -53,7 +45,9 @@ INSERT INTO `announcements_table` (`id`, `teacherID`, `date`, `title`, `body`) V
 (2, 1, '2019-02-08', 'Classes Cancelled Due to Inclement Weather', 'Sed ornare mauris sit amet sapien placerat, sagittis finibus felis suscipit. Duis interdum venenatis erat ac lobortis. Fusce elementum viverra mi sit amet placerat. Fusce malesuada purus vel dui sollicitudin, in luctus velit tincidunt. In ut ex nisl.'),
 (3, 1, '2019-03-27', 'Website Down Due to Routine Maintenance', 'Etiam ac dapibus nulla. Maecenas vel risus quis purus accumsan pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id mi nec est euismod vestibulum. Fusce ut iaculis libero. Vivamus sed auctor ligula, nec ultrices dui. Sed quis condimentum lacus.'),
 (4, 2, '2019-04-07', 'Exams Starting This Week', 'Duis leo orci, pellentesque nec elementum ac, placerat eget tortor. Sed sapien felis, porta et sagittis non, convallis quis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique quis mauris ac consectetur. Maecenas pretium nibh dolor, in mollis nisi blandit vel.'),
-(5, 1, '2019-04-10', 'Update to Anti-Plagirism Policy', 'Proin non enim a ipsum iaculis tempus. Vivamus volutpat, sem sit amet elementum imperdiet, nisi sapien dapibus lectus, at tristique erat sem in enim. Maecenas ornare risus ac urna consequat mattis. Nam quis ligula lacinia, tristique sem at, tristique metus. Nulla faucibus ex id suscipit auctor. Aliquam ut dictum lorem. Sed tincidunt viverra enim, at facilisis tellus rutrum vel.');
+(5, 1, '2019-04-10', 'Update to Anti-Plagirism Policy', 'Proin non enim a ipsum iaculis tempus. Vivamus volutpat, sem sit amet elementum imperdiet, nisi sapien dapibus lectus, at tristique erat sem in enim. Maecenas ornare risus ac urna consequat mattis. Nam quis ligula lacinia, tristique sem at, tristique metus. Nulla faucibus ex id suscipit auctor. Aliquam ut dictum lorem. Sed tincidunt viverra enim, at facilisis tellus rutrum vel.'),
+(6, 777, '2111-11-11', 'DummySQLInsert', 'Insert from dummy SQL'),
+(7, 777, '2111-11-11', 'DummySQLInsert', 'Insert from dummy SQL');
 
 -- --------------------------------------------------------
 
@@ -75,6 +69,7 @@ CREATE TABLE `assignments_table` (
 --
 
 INSERT INTO `assignments_table` (`id`, `subject`, `information`, `release_date`, `due_date`, `grade_weight`) VALUES
+(0, '$subject', '$information', '0000-00-00', '0000-00-00', 0),
 (1, 'Front End', 'Nullam quis vulputate urna. Sed pellentesque, arcu id faucibus accumsan, ex tortor dictum arcu, eu molestie magna odio id nibh.', '2019-01-01', '2019-02-01', 20),
 (2, 'Back End', 'Quisque at quam eu ligula rhoncus condimentum bibendum ac libero. Suspendisse in elit euismod, vestibulum turpis eu, pulvinar magna. In in hendrerit risus.', '2019-02-02', '2019-02-28', 30),
 (3, 'Back End', 'Duis fringilla efficitur purus, eu fermentum arcu facilisis et. Nulla quis dictum quam, nec dapibus ipsum. Nullam ex erat, pulvinar ut dolor sit amet, semper rhoncus dolor. ', '2019-03-01', '2019-04-18', 35),
@@ -136,7 +131,6 @@ INSERT INTO `submitted_assignments` (`assignment_id`, `student_id`, `date`, `sub
 
 -- --------------------------------------------------------
 
-
 --
 -- Table structure for table `users`
 --
@@ -190,18 +184,6 @@ ALTER TABLE `submitted_assignments`
   ADD PRIMARY KEY (`assignment_id`,`student_id`);
 
 --
--- Indexes for table `teachers`
---
-ALTER TABLE `teachers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -209,35 +191,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements_table`
 --
 ALTER TABLE `announcements_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `assignments_table`
---
-ALTER TABLE `assignments_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `teachers`
---
-ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `read_announcements`
---
-ALTER TABLE `read_announcements`
-  ADD CONSTRAINT `announcement_id` FOREIGN KEY (`announcement_id`) REFERENCES `announcements_table` (`id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
