@@ -15,22 +15,49 @@ import {SubmittedAssignment} from '../../models/submittedAssignment';
 
 
 export class AddGradeComponent   implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'grade', 'submitGrade'];
+  displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'grade', 'submitGrade'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
   // data: PeriodicElement[] = ELEMENT_DATA;
 
   @Input() idAssignment: string;
   assignmentId: number;
   assignments: SubmittedAssignment[];
-  addGradeForm = ({
-    idStudent: [null],
-    nameStudent: [null],
-    grade: [null],
-  });
-  error;
+  // addGradeForm = ({
+  //   idStudent: [null],
+  //   nameStudent: [null],
+  //   grade: [null],
+  // });
+  // error = '';
+
+  constructor(
+      private assignmentServ: AssignmentsService,
+      private router: Router,
+      private route: ActivatedRoute) {
+
+    this.assignmentId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+  }
+
+  //
+  // studentId: number;
+  // date: Date;
+  // submission: string;
+
+  ngOnInit() {
+    this.addGrade();
+  }
+
+  addGrade(): void {
+    this.assignmentServ.getAllSubmitted().subscribe(
+        (res: SubmittedAssignment[]) => {
+          this.assignments = res;
+        }
+    );
+  }
+
+}
 
 
-  constructor( private assignmentServ: AssignmentsService, private router: Router,
+  /*constructor( private assignmentServ: AssignmentsService, private router: Router,
                private route: ActivatedRoute) {
     this.assignmentId = this.route.snapshot.paramMap.get('id');
   }
@@ -59,7 +86,7 @@ export class AddGradeComponent   implements OnInit {
 
 
 
-}
+}*/
 /*
 export interface PeriodicElement {
   name: string;
