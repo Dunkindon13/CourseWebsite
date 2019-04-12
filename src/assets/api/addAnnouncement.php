@@ -11,14 +11,17 @@ $request = json_decode($postdata);
         echo "Connected!";
     }
 
-//    $subject = mysqli_real_escape_string($connection, trim($request->data->title));
-//    $information = mysqli_real_escape_string($connection, trim($request->data->body));
-//    $due_date = mysqli_real_escape_string($connection, trim($request->data->dueDate));
-//    $release_date = mysqli_real_escape_string($connection, trim($request->data->releaseDate));
-//    $weight = mysqli_real_escape_string($connection, trim($request->data->weight));
-//
-//
+$teacherID = mysqli_real_escape_string($connection, trim($request->data->teacherID));
+$date = mysqli_real_escape_string($connection, trim($request->data->date));
+$title = mysqli_real_escape_string($connection, trim($request->data->title));
+$body = mysqli_real_escape_string($connection, trim($request->data->body));
+
+
 //    $sql = "INSERT INTO `assignments_table` (`subject`, `information`, `release_date`, `due_date`, `grade_weight`) VALUES ('$subject', '$information', '$release_date',  '$due_date', '$weight')";
+
+
+$sql = "INSERT INTO `announcements_table`(`teacherID`, `date`, `title`, `body`) VALUES ('$teacherID', '$date', '$title', '$body')";
+
 
 
 
@@ -29,7 +32,7 @@ $request = json_decode($postdata);
 
 //    Temp / dummy SQL to check insert - now trying to insert the dummy data by clicking submit
 
-$sql = "INSERT INTO `announcements_table`(`teacherID`, `date`, `title`, `body`) VALUES ('888', '2112-12-12', 'DummySQLInsertByClick', 'Insert dummy SQL by Click')";
+//$sql = "INSERT INTO `announcements_table`(`teacherID`, `date`, `title`, `body`) VALUES ('888', '2112-12-12', 'DummySQLInsertByClick', 'Insert dummy SQL by Click')";
 
 
 
