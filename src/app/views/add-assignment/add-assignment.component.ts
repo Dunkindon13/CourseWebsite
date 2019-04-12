@@ -37,7 +37,7 @@ export class AddAssignmentComponent implements OnInit {
         console.log(this.addAssignmentForm);
         const args = {
             title: this.addAssignmentForm.value.title,
-            releaseDate: this.addAssignmentForm.value.releaseDate,
+            releaseDate: new Date(),
             dueDate: this.addAssignmentForm.value.dueDate,
             body: this.addAssignmentForm.value.body,
             weight: 0
@@ -59,4 +59,5 @@ export class AddAssignmentComponent implements OnInit {
         this.router.navigateByUrl('/assignments');
 
     }
+
 }

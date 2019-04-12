@@ -13,17 +13,28 @@
       <!--<mat-radio-button value="2">Students</mat-radio-button>-->
     <!--</mat-radio-group>-->
 
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field>
-        <input matInput placeholder="Username">
+        <input matInput formControlName="username"
+               [ngClass]="{'is-invalid': submitted && f.username.errors}"
+               placeholder="Username">
       </mat-form-field>
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">Username is Required!</div>
+      </div>
       <mat-form-field>
-        <input matInput type='password' placeholder="Password">
+        <input matInput type='password'
+               formControlName="password"
+               [ngClass]="{'is-invalid': submitted && f.password.errors}"
+               placeholder="Password">
       </mat-form-field>
+      <div *ngIf="submitted && f.password.erros" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is Required!</div>
+      </div>
     </form>
     <div class="buttons">
       <div class="login">
-        <button mat-raised-button color="primary" routerLink="/login/:id">Login</button>
+        <button [disabled]="loading" mat-raised-button color="primary" routerLink="/login/:id">Login</button>
       </div>
 
     </div>

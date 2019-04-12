@@ -10,8 +10,12 @@ import {Observable, throwError} from 'rxjs';
 
 export class AuthService {
     loggedIn = false;
+    baseUrl = 'http://localhost/coursewebsite/src/assets/api';
+    constructor(private http: HttpClient) {
+    }
 
-    login() {
+    login(username: string, password: string) {
+
         this.loggedIn = true;
     }
 
