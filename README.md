@@ -22,7 +22,7 @@ By default, the API launches to port 4200.
   * dueDate (Date)
   * body (string)
   
-  * */api/submitAssignment* expects a JSON object with:
+* */api/submitAssignment* expects a JSON object with:
   * Assignment ID (string)
   * Student ID (number)
   * Date (Date)
