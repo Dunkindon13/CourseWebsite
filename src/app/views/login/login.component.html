@@ -8,12 +8,12 @@
       Login
     </h2>
 
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="1">Teacher</mat-radio-button>
-      <mat-radio-button value="2">Students</mat-radio-button>
-    </mat-radio-group>
+    <!--<mat-radio-group aria-label="Select an option">-->
+      <!--<mat-radio-button value="1">Teacher</mat-radio-button>-->
+      <!--<mat-radio-button value="2">Students</mat-radio-button>-->
+    <!--</mat-radio-group>-->
 
-    <form class="login-form">
+    <form [formGroup]="loginForm">
       <mat-form-field>
         <input matInput placeholder="Username">
       </mat-form-field>
@@ -23,7 +23,7 @@
     </form>
     <div class="buttons">
       <div class="login">
-        <button mat-raised-button color="primary">Login</button>
+        <button mat-raised-button color="primary" routerLink="/login/:id">Login</button>
       </div>
 
     </div>

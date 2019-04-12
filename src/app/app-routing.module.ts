@@ -22,7 +22,6 @@ const routes: Routes = [
   {path: 'addannouncement', component: AddAnnouncementComponent },
   {path: 'addgrade', component: AddGradeComponent },
   {path: 'submitassignment/:id', component: SubmitAssignmentComponent},
-
   {path: '**', component: AnnouncementsComponent}
 ];
 
