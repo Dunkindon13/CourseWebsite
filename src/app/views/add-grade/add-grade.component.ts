@@ -4,6 +4,7 @@ import {AssignmentsService} from '../../models/assignments.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {SubmittedAssignment} from '../../models/submittedAssignment';
+import {variable} from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -22,11 +23,8 @@ export class AddGradeComponent   implements OnInit {
   @Input() idAssignment: string;
   assignmentId: number;
   assignments: SubmittedAssignment[];
-  // addGradeForm = ({
-  //   idStudent: [null],
-  //   nameStudent: [null],
-  //   grade: [null],
-  // });
+  // tmpassignments: SubmittedAssignment[];
+
   // error = '';
 
   constructor(
@@ -38,7 +36,7 @@ export class AddGradeComponent   implements OnInit {
   }
 
   //
-  // studentId: number;
+   id: number;
   // date: Date;
   // submission: string;
 
@@ -49,12 +47,60 @@ export class AddGradeComponent   implements OnInit {
   addGrade(): void {
     this.assignmentServ.getAllSubmitted().subscribe(
         (res: SubmittedAssignment[]) => {
-          this.assignments = res;
+          // this.tmpassignments = res;
+          // this.assignments = res;
+          this.assignments = [];
+
+          // this.assignments = this.tmpassignments;
+          console.log('MY ASSIGNMENT');
+          for (const item of res) {
+            console.log(item);
+            console.log(this.assignmentId);
+            console.log(item.assignmentId);
+            if ( item.assignmentId.toString() === this.assignmentId.toString() ) {
+              this.assignments.push(item);
+              console.log(item.assignmentId);
+            }
+
+          }
+
+          // this.assignments = res;
         }
     );
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /*constructor( private assignmentServ: AssignmentsService, private router: Router,

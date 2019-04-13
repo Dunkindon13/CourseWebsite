@@ -57,7 +57,7 @@ export class SubmitAssignmentComponent implements OnInit {
           this.error = err;
         }
     );
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/assignments');
   }
 
 }
