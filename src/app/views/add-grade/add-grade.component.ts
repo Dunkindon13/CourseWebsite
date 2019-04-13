@@ -5,25 +5,27 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder} from '@angular/forms';
 import {SubmittedAssignment} from '../../models/submittedAssignment';
 import {variable} from '@angular/compiler/src/output/output_ast';
+import {logger} from 'codelyzer/util/logger';
 
 
 
 @Component({
   selector: 'app-add-grade',
   templateUrl: './add-grade.component.html',
-  styleUrls: ['./add-grade.component.css'],
+  styleUrls: ['./add-grade.component.css']
 })
 
 
 export class AddGradeComponent   implements OnInit {
-  displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'grade', 'submitGrade'];
+  displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'currentgrade', 'grade', 'submitGrade'];
   columnsToDisplay: string[] = this.displayedColumns.slice();
   // data: PeriodicElement[] = ELEMENT_DATA;
 
   @Input() idAssignment: string;
   assignmentId: number;
   assignments: SubmittedAssignment[];
-  // tmpassignments: SubmittedAssignment[];
+  studentid: number;
+  grade: number;
 
   // error = '';
 
@@ -33,6 +35,7 @@ export class AddGradeComponent   implements OnInit {
       private route: ActivatedRoute) {
 
     this.assignmentId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+
   }
 
   //
@@ -41,10 +44,10 @@ export class AddGradeComponent   implements OnInit {
   // submission: string;
 
   ngOnInit() {
-    this.addGrade();
+    this.sortAss();
   }
 
-  addGrade(): void {
+  sortAss(): void {
     this.assignmentServ.getAllSubmitted().subscribe(
         (res: SubmittedAssignment[]) => {
           // this.tmpassignments = res;
@@ -52,14 +55,14 @@ export class AddGradeComponent   implements OnInit {
           this.assignments = [];
 
           // this.assignments = this.tmpassignments;
-          console.log('MY ASSIGNMENT');
+          // console.log('MY ASSIGNMENT');
           for (const item of res) {
-            console.log(item);
-            console.log(this.assignmentId);
-            console.log(item.assignmentId);
+            // console.log(item);
+            // console.log(this.assignmentId);
+            // console.log(item.assignmentId);
             if ( item.assignmentId.toString() === this.assignmentId.toString() ) {
               this.assignments.push(item);
-              console.log(item.assignmentId);
+              // console.log(item.assignmentId);
             }
 
           }
@@ -69,6 +72,26 @@ export class AddGradeComponent   implements OnInit {
     );
   }
 
+  addGrade(iput7): void {
+      const args = {
+      assignmentId: this.assignmentId,
+      check: iput7
+      // grade: this.grade
+    };
+
+    // const args = {Nmae: 'Naenene'};
+    // const args = 'args ';
+
+      console.log('Clicked on Ass ID ' + args.assignmentId + ' and student ID ' + args.check);
+
+    // const assignment = new SubmittedAssignment(args);
+    // this.assignmentServ.submitAssignment(assignment).subscribe(
+    //   (res: SubmittedAssignment) => {
+    //
+    //   }
+    // );
+      this.router.navigateByUrl('/gradeassignment/' + args.assignmentId);
+  }
 }
 
 

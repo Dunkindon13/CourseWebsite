@@ -1,6 +1,4 @@
 <h2>{{this.assignmentId}}</h2>
-
-
 <!--<h2>{{assignment.title}}<</h2>-->
 <!--<form (ngSubmit)="onSubmit()" [formGroup]="addGradeForm" fxLayout="column" fxLayoutAlign="center center">-->
 <!--<div *ngIf="assignments">-->
@@ -22,29 +20,34 @@
 
 
       <ng-container matColumnDef="ass_id">
-        <mat-header-cell *matHeaderCellDef> ass_id </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.assignmentId}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> ass_id </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'"> {{element.assignmentId}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="studentid">
-        <mat-header-cell *matHeaderCellDef> Student ID </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.studentid}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Student ID </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'"> {{element.studentid}} </mat-cell>
       </ng-container>
 
       <!-- Symbol Column -->
       <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+        <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Date </mat-header-cell>
+        <mat-cell *matCellDef="let element " [ngClass]="'customWidthClass'"> {{element.date}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="submission">
-        <mat-header-cell *matHeaderCellDef> submission </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.submission}} </mat-cell>
+      <ng-container matColumnDef="submission" [ngClass]="'flex-item'" ]>
+        <mat-header-cell *matHeaderCellDef > submission </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.submission}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="currentgrade" >
+        <mat-header-cell *matHeaderCellDef > currentgrade </mat-header-cell>
+        <mat-cell *matCellDef="let element" > {{element.grade}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="grade">
         <mat-header-cell *matHeaderCellDef> Grade (from 0 to 100) </mat-header-cell>
-        <mat-cell *matCellDef="let element">
+        <mat-cell *matCellDef="let element" >
           <mat-form-field >
             <input matInput placeholder="Add Grade" type="number" min="0" max="100" step="1">
           </mat-form-field>
@@ -52,9 +55,9 @@
       </ng-container>
 
       <ng-container matColumnDef="submitGrade">
-        <mat-header-cell *matHeaderCellDef> Submit Grade </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <button mat-raised-button>Save</button>
+        <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Submit Grade </mat-header-cell>
+        <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'">
+          <button mat-raised-button id = "{{element.studentid}}" (click)="addGrade(element.studentid)">Save</button>
         </mat-cell>
       </ng-container>
 
