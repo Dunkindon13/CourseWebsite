@@ -11,7 +11,7 @@ import { MatDialog, MatDialogRef} from '@angular/material';
 })
 export class NavComponent {
 
-  title = 'COMP201';
+  title = 'CourWeb';
   role: string
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)

@@ -37,6 +37,7 @@ import { AddAnnouncementComponent } from './views/add-announcement/add-announcem
 import { AddGradeComponent } from './views/add-grade/add-grade.component';
 import { SubmitAssignmentComponent } from './views/submit-assignment/submit-assignment.component';
 import { EditAnnouncementComponent } from './views/edit-announcement/edit-announcement.component';
+import { EditAssignmentComponent } from './views/edit-assignment/edit-assignment.component';
 
 
 
@@ -54,7 +55,8 @@ import { EditAnnouncementComponent } from './views/edit-announcement/edit-announ
     AddAnnouncementComponent,
     AddGradeComponent,
     SubmitAssignmentComponent,
-    EditAnnouncementComponent
+    EditAnnouncementComponent,
+    EditAssignmentComponent
   ],
   imports: [
     BrowserModule,

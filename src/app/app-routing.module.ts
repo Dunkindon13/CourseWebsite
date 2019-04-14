@@ -9,6 +9,7 @@ import {AddAnnouncementComponent} from './views/add-announcement/add-announcemen
 import {AddGradeComponent} from './views/add-grade/add-grade.component';
 import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assignment.component';
 import {EditAnnouncementComponent} from './views/edit-announcement/edit-announcement.component';
+import {EditAssignmentComponent} from './views/edit-assignment/edit-assignment.component';
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'gradeassignment/:id', component: AddGradeComponent},
   {path: 'submitassignment/:id', component: SubmitAssignmentComponent},
   {path: 'editannouncement/:id', component: EditAnnouncementComponent},
+  {path: 'editassignment/:id', component EditAssignmentComponent}
   {path: '**', component: AnnouncementsComponent}
 ];
 
