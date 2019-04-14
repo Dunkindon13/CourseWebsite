@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 12, 2019 at 08:03 PM
+-- Generation Time: Apr 14, 2019 at 11:48 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -41,13 +41,11 @@ CREATE TABLE `announcements_table` (
 --
 
 INSERT INTO `announcements_table` (`id`, `teacherID`, `date`, `title`, `body`) VALUES
-(1, 2, '2019-01-10', 'Semester Starts Today', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet ex congue luctus semper. Aenean mattis erat sem, id sodales felis iaculis lobortis. In orci leo, bibendum non est nec, auctor dapibus lectus. Quisque porttitor lorem quam, sed dignissim magna ornare in. Nam accumsan velit a libero vehicula, et tempus mauris sodales. Donec ac ultricies enim. Duis non ante imperdiet, interdum tellus a, placerat enim. In scelerisque tortor at nunc placerat, at pharetra nisl luctus.'),
-(2, 1, '2019-02-08', 'Classes Cancelled Due to Inclement Weather', 'Sed ornare mauris sit amet sapien placerat, sagittis finibus felis suscipit. Duis interdum venenatis erat ac lobortis. Fusce elementum viverra mi sit amet placerat. Fusce malesuada purus vel dui sollicitudin, in luctus velit tincidunt. In ut ex nisl.'),
-(3, 1, '2019-03-27', 'Website Down Due to Routine Maintenance', 'Etiam ac dapibus nulla. Maecenas vel risus quis purus accumsan pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id mi nec est euismod vestibulum. Fusce ut iaculis libero. Vivamus sed auctor ligula, nec ultrices dui. Sed quis condimentum lacus.'),
-(4, 2, '2019-04-07', 'Exams Starting This Week', 'Duis leo orci, pellentesque nec elementum ac, placerat eget tortor. Sed sapien felis, porta et sagittis non, convallis quis sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla tristique quis mauris ac consectetur. Maecenas pretium nibh dolor, in mollis nisi blandit vel.'),
-(5, 1, '2019-04-10', 'Update to Anti-Plagirism Policy', 'Proin non enim a ipsum iaculis tempus. Vivamus volutpat, sem sit amet elementum imperdiet, nisi sapien dapibus lectus, at tristique erat sem in enim. Maecenas ornare risus ac urna consequat mattis. Nam quis ligula lacinia, tristique sem at, tristique metus. Nulla faucibus ex id suscipit auctor. Aliquam ut dictum lorem. Sed tincidunt viverra enim, at facilisis tellus rutrum vel.'),
-(6, 777, '2111-11-11', 'DummySQLInsert', 'Insert from dummy SQL'),
-(7, 777, '2111-11-11', 'DummySQLInsert', 'Insert from dummy SQL');
+(1, 2, '2019-01-10', 'Semester Starts Today', 'Whether you’re starting your first semester of college, or returning after a much-needed break, it’s time to start thinking about how you can put your best foot forward in the new school year.\r\nHere are a few tips to help you prepare for the start of the semester:\r\n1) Get organized.\r\n2) Buy or rent your textbooks before the first day of class.\r\n2) Adjust to a new schedule.\r\n3) Have a plan.\r\n4) Get involved.\r\n5) Making the extra effort to prepare for your first few weeks of school will help set the tone for a productive semester and put you on the right track towards achieving your goals.\r\nFor more tips on how to jumpstart the school year, click <a href=\"https://www.herzing.edu/blog/5-tips-help-you-prepare-new-semester\">here</a>.'),
+(2, 1, '2019-02-08', 'Classes Cancelled Due to Inclement Weather', 'Who doesn’t love a snow day? All classes, tutorials and labs are cancelled and the University is CLOSED for today due to the impending snowstorm. Please stay indoors where it is safe and warm and don\'t forget to study.\r\nThe University will be open tomorrow and classes will resume as scheduled.\r\n'),
+(3, 1, '2019-03-27', 'Website Down Due to Routine Maintenance', 'Due to an overwhelming amount of students submitting assignments at 11:59PM last night, the weak infrastructure of our website crashed and is currently being repaired. Please try to submit your assignment in advance in the future, so as not to tax our increasingly old website. \r\nPlease note: Practicing DDOS attacks on our website is absolutely illegal and will be met with severe consequences, once the culprit is found. You have been warned. '),
+(4, 2, '2019-04-07', 'Exams Starting This Week', 'Please note that Exams will be starting tomorrow, Monday, April 8th, 2019. Exams end on Monday, April 22nd, 2019. Should you have a religious/work conflict, we are sorry but it is too late to submit a request for an alternate date. Should have been done 2 months ago.\r\nGood luck on your exams and enjoy your summer vacation!'),
+(5, 1, '2019-04-10', 'Update to Anti-Plagiarism Policy', 'Just a notice to let all students know that starting with this upcoming exam season, Winter 2019, ALL smartwatches and activity trackers(Apple, Samsung, LG, Fitbit, Pebble, Huawei, Xiaomi, ASUS, Motorola, Mobvoi, Garmin, Fossil, Withings, etc.) are hereby BANNED and forbidden from being worn by any student during an exam. Smartwatches must be turned off and stowed in a backpack along with their smartphone while taking an exam. Should a student be caught wearing a smartwatch during an exam, an immediate zero will be given for that exam and the student will be subject to further consequences, pending the Dean\'s decision. \r\nDo yourself a favour this semester, don\'t bring your smartwatch to an exam. Period.');
 
 -- --------------------------------------------------------
 
@@ -69,22 +67,10 @@ CREATE TABLE `assignments_table` (
 --
 
 INSERT INTO `assignments_table` (`id`, `subject`, `information`, `release_date`, `due_date`, `grade_weight`) VALUES
-(0, '$subject', '$information', '0000-00-00', '0000-00-00', 0),
-(1, 'Front End', 'Nullam quis vulputate urna. Sed pellentesque, arcu id faucibus accumsan, ex tortor dictum arcu, eu molestie magna odio id nibh.', '2019-01-01', '2019-02-01', 20),
-(2, 'Back End', 'Quisque at quam eu ligula rhoncus condimentum bibendum ac libero. Suspendisse in elit euismod, vestibulum turpis eu, pulvinar magna. In in hendrerit risus.', '2019-02-02', '2019-02-28', 30),
-(3, 'Back End', 'Duis fringilla efficitur purus, eu fermentum arcu facilisis et. Nulla quis dictum quam, nec dapibus ipsum. Nullam ex erat, pulvinar ut dolor sit amet, semper rhoncus dolor. ', '2019-03-01', '2019-04-18', 35),
-(4, 'Front End', 'Ivamus posuere sem quis leo suscipit, id volutpat metus tristique. Nulla dictum nunc magna, a consequat eros efficitur at.', '2019-04-15', '2019-04-28', 15),
-(11, 'TESTbbb', 'TESTbbb', '2018-04-28', '2018-05-28', 80),
-(13, 'History', 'History of Canada', '2019-04-11', '2019-04-18', 0),
-(14, 'Math', 'Sample Math Assignment', '2019-04-11', '2019-04-18', 0),
-(15, '', '', '0000-00-00', '0000-00-00', 0),
-(16, 'Science', 'example', '2019-04-11', '2019-04-18', 0),
-(17, '', '', '0000-00-00', '0000-00-00', 0),
-(18, 'Math', 'Worksheet', '2019-04-11', '2019-04-18', 0),
-(19, 'bmbvhvhv', 'blah', '2019-04-11', '2019-04-18', 0),
-(20, '', '', '0000-00-00', '0000-00-00', 0),
-(21, 'dfgdfgd', 'dfgdfgdfgdf', '2019-04-25', '2019-04-26', 0),
-(22, 'Test', 'Does a blank record get produced?', '2019-04-11', '2019-04-18', 0);
+(1, 'Simple Cashier Calculator', 'Create a cashier calculator using Java. Must include if/else statements, while/for loops, a GST/QST calculator and an items counter once at checkout.\r\nBonus: Use a switch statement and create a class Cashier.', '2019-01-01', '2019-02-01', 20),
+(2, 'Shapes Using Stars', 'Create various shapes using asterisks/stars, such as a pyramid, rectangle, circle and hectagon.\r\nHINT: Use nested for loops.\r\nBonus: Create sequences of numbers using nested for loops.', '2019-02-02', '2019-02-28', 30),
+(3, 'Tic Tac Toe Game', 'Create a simple Tic Tac Toe Game using PHP. Must include sessions, user input and variable computer AI difficulty.', '2019-03-01', '2019-04-18', 35),
+(4, 'Front End', 'Ivamus posuere sem quis leo suscipit, id volutpat metus tristique. Nulla dictum nunc magna, a consequat eros efficitur at.', '2019-04-15', '2019-04-28', 15);
 
 -- --------------------------------------------------------
 
@@ -123,11 +109,7 @@ INSERT INTO `submitted_assignments` (`assignment_id`, `student_id`, `date`, `sub
 (1, 6, '2019-02-03', 'Cras id velit felis. Donec sollicitudin orci eu libero congue, sed euismod magna euismod. Sed placerat tristique placerat. Proin id ligula finibus, viverra leo in, aliquam nulla. Integer et augue in nulla pharetra pellentesque. Praesent varius ultricies ipsum sit amet porttitor.', 67.5),
 (2, 3, '2019-02-27', 'Cras vel iaculis velit. Etiam faucibus mattis odio, eget pellentesque lorem volutpat at. Mauris posuere nisi eget ex eleifend venenatis. Vivamus feugiat augue orci, non ultrices elit placerat quis.', 72.6),
 (2, 5, '2019-02-27', 'Curabitur sit amet turpis nec quam viverra elementum sed ac quam. Curabitur maximus condimentum tristique. Curabitur aliquet pharetra velit, non luctus mauris laoreet ut. Nam ut facilisis turpis.', 95.45),
-(2, 6, '2019-02-26', 'Aliquam auctor enim quis pulvinar porta. Quisque pharetra mollis justo eu consectetur. Pellentesque porttitor euismod ultrices. Curabitur lobortis dapibus risus at consectetur.', 82),
-(11, 4, '2018-04-29', 'Does this work?', 80),
-(12, 3, '2018-04-28', 'Its a long established...', 80),
-(12, 4, '2018-04-29', 'Does this work?', 80),
-(15, 5, '2019-04-11', 'Hello Worldddddddddddddddddddd151551', 0);
+(2, 6, '2019-02-26', 'Aliquam auctor enim quis pulvinar porta. Quisque pharetra mollis justo eu consectetur. Pellentesque porttitor euismod ultrices. Curabitur lobortis dapibus risus at consectetur.', 82);
 
 -- --------------------------------------------------------
 
@@ -184,6 +166,12 @@ ALTER TABLE `submitted_assignments`
   ADD PRIMARY KEY (`assignment_id`,`student_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -191,7 +179,13 @@ ALTER TABLE `submitted_assignments`
 -- AUTO_INCREMENT for table `announcements_table`
 --
 ALTER TABLE `announcements_table`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `assignments_table`
+--
+ALTER TABLE `assignments_table`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
