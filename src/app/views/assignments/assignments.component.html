@@ -4,14 +4,13 @@
 * Main Purpose: HTML component to show all assignments, current and submitted.-->
 
 <!--<p *ngFor="let assignment of assignments">{{assignment.id}}</p>-->
+<div>
 <div class="inline">
     <h3>Assignments</h3>
     <p *ngIf="nav.role == 'teacher'">
         <button mat-raised-button color="accent" routerLink="/addassignment">Add assignment</button>
     </p>
 </div>
-
-
 
 <mat-tab-group mat-align-tabs="end">
     <mat-tab label="All"><mat-accordion multi="true" class="my-headers-align">
@@ -41,9 +40,9 @@
 
                 <div class="inline" *ngIf="nav.role == 'teacher'">
                     <button mat-raised-button color="primary" routerLink="/gradeassignment/{{assignment.id}}">View Submissions</button>
-                    <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
+                    <button mat-raised-button color="warn" routerLink="/editAssignment/{{assignment.id}}">Edit Assignment</button>
                 </div>
-                <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
+                <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
 
 
                 <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
@@ -80,10 +79,10 @@
                 <div class="showSummary" [innerHTML]="ongoingAgnmt.body"></div>
 
                 <div class="inline" *ngIf="nav.role == 'teacher'">
-                    <button mat-raised-button color="primary" routerLink="/gradeassignment/{{assignment.id}}">View Submissions</button>
-                    <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
+                    <button mat-raised-button color="primary" routerLink="/gradeassignment/{{ongoingAgnmt.id}}">View Submissions</button>
+                    <button mat-raised-button color="warn" routerLink="/editAssignment/{{ongoingAgnmt.id}}">Edit Assignment</button>
                 </div>
-                <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
+                <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{ongoingAgnmt.id}}">Submit assignment</button></div>
 
 
                 <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
@@ -122,10 +121,9 @@
                     <div class="showSummary" [innerHTML]="completedAgnmt.body"></div>
 
                     <div class="inline" *ngIf="nav.role == 'teacher'">
-                        <button mat-raised-button color="primary" routerLink="/gradeassignment/{{assignment.id}}">View Submissions</button>
-                        <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
+                        <button mat-raised-button color="primary" routerLink="/gradeassignment/{{completedAgnmt.id}}">View Submissions</button>
                     </div>
-                    <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
+                    <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{completedAgnmt.id}}">Submit assignment</button></div>
 
 
                     <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
@@ -160,10 +158,9 @@
                     <div class="showSummary" [innerHTML]="upcomingAgnmt.body"></div>
 
                     <div class="inline" *ngIf="nav.role == 'teacher'">
-                        <button mat-raised-button color="primary" routerLink="/gradeassignment/{{assignment.id}}">View Submissions</button>
-                        <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
+                        <button mat-raised-button color="warn" routerLink="/editAssignment/{{upcomingAgnmt.id}}">Edit Assignment</button>
                     </div>
-                    <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
+
 
 
                     <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
@@ -172,3 +169,4 @@
         </mat-accordion>
     </mat-tab>
 </mat-tab-group>
+</div>
