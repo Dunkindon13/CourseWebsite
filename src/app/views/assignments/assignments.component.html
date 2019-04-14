@@ -1,56 +1,54 @@
 <!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 9, 2019
-* Last Modified: April 11, 2019
+* Last Modified: April 14, 2019
 * Main Purpose: HTML component to show all assignments, current and submitted.-->
 
 <!--<p *ngFor="let assignment of assignments">{{assignment.id}}</p>-->
 <div class="inline">
-<h3>Assignments</h3>
-<p *ngIf="nav.role == 'teacher'">
-<button mat-raised-button color="accent" routerLink="/addassignment">Add assignment</button>
-</p>
+    <h3>Assignments</h3>
+    <p *ngIf="nav.role == 'teacher'">
+        <button mat-raised-button color="accent" routerLink="/addassignment">Add assignment</button>
+    </p>
 </div>
 <mat-accordion multi="true" class="my-headers-align">
-  <div *ngFor="let assignment of assignments | reverse;">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <!--User ID: {{assignment.userid}}-->
-        </mat-panel-title>
-        <mat-panel-title>
-          ID: {{assignment.id}}
-        </mat-panel-title>
-        <mat-panel-title>
-          Class: {{assignment.class}}
-        </mat-panel-title>
-        <mat-panel-title>
-          Grade: {{assignment.studentGrade}}
-        </mat-panel-title>
-        <mat-panel-title>
-          Percent: {{assignment.weight}}
-        </mat-panel-title>
-        <mat-panel-description>
-          Subject: {{assignment.title}}
-        </mat-panel-description>
-        <mat-panel-description>
-          Release Date: {{assignment.releaseDate | date:'mediumDate'}}
-        </mat-panel-description>
-        <mat-panel-description>
-          Due Date: {{assignment.dueDate | date: 'mediumDate'}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div class="showSummary" [innerHTML]="assignment.body"></div>
+    <div *ngFor="let assignment of assignments | reverse;">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    <!--User ID: {{assignment.userid}}-->
+                </mat-panel-title>
+                <mat-panel-title>
+                    ID: {{assignment.id}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    Percent: {{assignment.weight}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    Subject: {{assignment.title}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    Release Date: {{assignment.releaseDate | date:'mediumDate'}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    Due Date: {{assignment.dueDate | date: 'mediumDate'}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="showSummary" [innerHTML]="assignment.body"></div>
 
-        <div class="inline" *ngIf="nav.role == 'teacher'">
-          <button mat-raised-button color="primary" routerLink="/addgrade">View Submissions</button>
-          <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
-        </div>
-        <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
+            <div class="inline" *ngIf="nav.role == 'teacher'">
+                <button mat-raised-button color="primary" routerLink="/addgrade">View Submissions</button>
+                <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
+            </div>
+            <div class="inline" *ngIf="nav.role == 'student'">
+                <button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit
+                    assignment
+                </button>
+            </div>
 
 
-       <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
-    </mat-expansion-panel>
-  </div>
+            <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
+        </mat-expansion-panel>
+    </div>
 </mat-accordion>
 
 

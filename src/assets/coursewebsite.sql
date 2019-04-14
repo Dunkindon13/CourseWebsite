@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:81
--- Generation Time: Apr 14, 2019 at 11:09 PM
+-- Generation Time: Apr 14, 2019 at 11:48 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -67,9 +67,9 @@ CREATE TABLE `assignments_table` (
 --
 
 INSERT INTO `assignments_table` (`id`, `subject`, `information`, `release_date`, `due_date`, `grade_weight`) VALUES
-(1, 'Front End', 'Nullam quis vulputate urna. Sed pellentesque, arcu id faucibus accumsan, ex tortor dictum arcu, eu molestie magna odio id nibh.', '2019-01-01', '2019-02-01', 20),
-(2, 'Back End', 'Quisque at quam eu ligula rhoncus condimentum bibendum ac libero. Suspendisse in elit euismod, vestibulum turpis eu, pulvinar magna. In in hendrerit risus.', '2019-02-02', '2019-02-28', 30),
-(3, 'Back End', 'Duis fringilla efficitur purus, eu fermentum arcu facilisis et. Nulla quis dictum quam, nec dapibus ipsum. Nullam ex erat, pulvinar ut dolor sit amet, semper rhoncus dolor. ', '2019-03-01', '2019-04-18', 35),
+(1, 'Simple Cashier Calculator', 'Create a cashier calculator using Java. Must include if/else statements, while/for loops, a GST/QST calculator and an items counter once at checkout.\r\nBonus: Use a switch statement and create a class Cashier.', '2019-01-01', '2019-02-01', 20),
+(2, 'Shapes Using Stars', 'Create various shapes using asterisks/stars, such as a pyramid, rectangle, circle and hectagon.\r\nHINT: Use nested for loops.\r\nBonus: Create sequences of numbers using nested for loops.', '2019-02-02', '2019-02-28', 30),
+(3, 'Tic Tac Toe Game', 'Create a simple Tic Tac Toe Game using PHP. Must include sessions, user input and variable computer AI difficulty.', '2019-03-01', '2019-04-18', 35),
 (4, 'Front End', 'Ivamus posuere sem quis leo suscipit, id volutpat metus tristique. Nulla dictum nunc magna, a consequat eros efficitur at.', '2019-04-15', '2019-04-28', 15);
 
 -- --------------------------------------------------------
