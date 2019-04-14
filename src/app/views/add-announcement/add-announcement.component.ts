@@ -21,6 +21,7 @@ import {AnnouncementsService} from '../../models/announcements.service';
 })
 export class AddAnnouncementComponent implements OnInit {
 
+
   announcements: Announcement[];
   addAnnouncementForm = this.fb.group({
     title: [null],
@@ -37,6 +38,7 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit() {
 
   }
+
 
   onSubmit() {
     // alert('Thanks!');

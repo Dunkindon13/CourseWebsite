@@ -6,6 +6,7 @@
 * Main Purpose: HTML component for filling out form to add an announcement by a teacher and submitting it to the announcement board.
 */
 
+
 <h3>Add Announcement</h3>
 
 <form (ngSubmit)="onSubmit()" [formGroup]="addAnnouncementForm" fxLayout="column" fxLayoutAlign="center center">
@@ -35,5 +36,4 @@
   <mat-card-actions>
     <button mat-raised-button color="primary" type="submit">Submit</button>
   </mat-card-actions>
-
 </form>

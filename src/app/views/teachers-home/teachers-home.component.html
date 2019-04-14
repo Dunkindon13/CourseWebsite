@@ -1,3 +1,24 @@
-<p>
-  teachers-home works!
-</p>
+<div class="inline">
+    <h2>Teacher's Home Page</h2>
+</div>
+<div class="inline">
+    <h3>Assignments</h3>
+    <p *ngIf="!teacherIsLoggedIn">
+        <button mat-raised-button color="primary" routerLink="/assignments">See Assignments</button>
+    </p>
+
+    <p *ngIf="!teacherIsLoggedIn">
+        <button mat-raised-button color="accent" routerLink="/addassignment">Add Assignment</button>
+    </p>
+</div>
+<div class="inline">
+    <h3>Announcements</h3>
+    <p *ngIf="!teacherIsLoggedIn">
+        <button mat-raised-button color="primary" routerLink="/announcements">See Announcements</button>
+    </p>
+
+    <p *ngIf="!teacherIsLoggedIn">
+        <button mat-raised-button color="accent" routerLink="/addannouncement">Add Announcement</button>
+    </p>
+</div>
+

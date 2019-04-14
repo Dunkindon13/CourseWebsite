@@ -1,3 +1,8 @@
+<!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 8, 2019
+* Last Modified: April 10, 2019
+* Main Purpose: HTML component to show all announcements currently on the announcement board.-->
+
 <div class="inline">
 <h3>Announcements </h3>
 <p *ngIf="nav.role == 'teacher';">
@@ -22,7 +27,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="showSummary" [innerHTML]="announcement.body"></div>
-      <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
+      <div class="inline" *ngIf="teacherIsLoggedIn"><button mat-raised-button color="primary" routerLink="/editannouncement/{{announcement.id}}">Edit</button></div>
     </mat-expansion-panel>
   </div>
 </mat-accordion>

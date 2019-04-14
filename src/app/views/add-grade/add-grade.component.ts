@@ -1,3 +1,9 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 11, 2019
+* Main Purpose: TypeScript component to add a grade to an assignment by a teacher and submitting it.
+*/
 import { Component, Input, OnInit } from '@angular/core';
 import {Assignment} from '../../models/assignment';
 import {AssignmentsService} from '../../models/assignments.service';

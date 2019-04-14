@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnnouncementsComponent } from './views/announcements/announcements.component';
+import { LoginComponent } from './views/login/login.component';
 import { TeachersHomeComponent } from './views/teachers-home/teachers-home.component';
 import { StudentsHomeComponent } from './views/students-home/students-home.component';
 import { NavComponent } from './views/nav/nav.component';
@@ -35,7 +36,7 @@ import { DummyComponent } from './dummy/dummy.component';
 import { AddAnnouncementComponent } from './views/add-announcement/add-announcement.component';
 import { AddGradeComponent } from './views/add-grade/add-grade.component';
 import { SubmitAssignmentComponent } from './views/submit-assignment/submit-assignment.component';
-import { TempLoginComponent } from './temp-login/temp-login.component';
+import { EditAnnouncementComponent } from './views/edit-announcement/edit-announcement.component';
 
 
 
@@ -50,11 +51,10 @@ import { TempLoginComponent } from './temp-login/temp-login.component';
     AssignmentsComponent,
     AddAssignmentComponent,
     DummyComponent,
-
     AddAnnouncementComponent,
     AddGradeComponent,
     SubmitAssignmentComponent,
-    TempLoginComponent
+    EditAnnouncementComponent
   ],
   imports: [
     BrowserModule,
