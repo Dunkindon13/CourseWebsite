@@ -93,7 +93,7 @@
 
 <div class="example-full-width">
   <mat-form-field>
-    <input matInput formControlName="releaseDate" [(ngModel)]="ReleaseDate" [min]="today" [matDatepicker]="ReleaseDate" placeholder="Release Date">
+    <input matInput formControlName="releaseDate" [(ngModel)]="release" [min]="today" [matDatepicker]="ReleaseDate" placeholder="Release Date">
     <mat-datepicker-toggle matSuffix [for]="ReleaseDate"></mat-datepicker-toggle>
     <mat-datepicker #ReleaseDate></mat-datepicker>
   </mat-form-field>
