@@ -12,6 +12,7 @@ import {AnnouncementsService} from '../../models/announcements.service';
 export class EditAnnouncementComponent implements OnInit {
 
     id: number;
+    today = new Date();
     announcements: Announcement[];
     editAnnouncementForm = this.fb.group({
     title: [null],
