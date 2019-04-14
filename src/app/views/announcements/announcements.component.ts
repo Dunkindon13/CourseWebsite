@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AnnouncementsService} from '../../models/announcements.service';
 import {Announcement} from '../../models/announcement';
 import {ActivatedRoute} from '@angular/router';
+import {NavComponent} from '../nav/nav.component';
 
 @Component({
   selector: 'app-announcements',
@@ -16,14 +17,11 @@ export class AnnouncementsComponent implements OnInit {
   teacherIsLoggedIn = true;
   studentIsLoggedIn = false;
   constructor(private announcementsServ: AnnouncementsService,
-              private route: ActivatedRoute) {
-    this.role = this.route.snapshot.paramMap.get('role');
-
+              private route: ActivatedRoute,
+              private nav: NavComponent) {
   }
-
   ngOnInit() {
     this.getAnnouncements();
-    this.setRole();
   }
   getAnnouncements(): void {
     this.announcementsServ.getAll().subscribe(
@@ -37,17 +35,5 @@ export class AnnouncementsComponent implements OnInit {
     );
   }
 
-  setRole(): void {
-    if (this.role == 'teacher') {
-      this.teacherIsLoggedIn = true;
-      this.studentIsLoggedIn = false;
-    } else if (this.role == 'student') {
-      this.teacherIsLoggedIn = false;
-      this.studentIsLoggedIn = true;
-    } else {
-      this.teacherIsLoggedIn = false;
-      this.studentIsLoggedIn = false;
-    }
-  }
 }
 

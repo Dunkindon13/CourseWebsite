@@ -22,7 +22,7 @@ import {
   MatIconModule,
   MatListModule,
   MatInputModule,
-  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule,
+  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule, MatDialogModule
 } from '@angular/material';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -44,7 +44,6 @@ import { TempLoginComponent } from './temp-login/temp-login.component';
   declarations: [
     AppComponent,
     AnnouncementsComponent,
-    LoginComponent,
     TeachersHomeComponent,
     StudentsHomeComponent,
     NavComponent,
@@ -84,7 +83,7 @@ import { TempLoginComponent } from './temp-login/temp-login.component';
     MatStepperModule,
     MatSnackBarModule,
     MatTableModule,
-
+    MatDialogModule
 
   ],
   providers: [],

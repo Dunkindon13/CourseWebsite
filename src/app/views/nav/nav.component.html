@@ -26,14 +26,17 @@
       Homepage for COMP 201: Introduction to Web Development
       </div>
       <div style="margin-left: 35%;">
-        <button *ngIf="!(this.teacherIsLoggedIn)" type="button" color="accent"
+        <button *ngIf="!(this.role == 'teacher')" type="button" color="accent"
                 mat-raised-button
                 style="margin: 10px;"
-                routerLink="/home/teacher">Teacher</button>
-        <button *ngIf="!(this.studentIsLoggedIn)" type="button" color="warn"
+                (click)="logIn('teacher')">Teacher</button>
+        <button *ngIf="!(this.role == 'student')" type="button" color="accent"
                 mat-raised-button
-                style="margin:10px;" routerLink="/home/student">Student</button>
-        <button *ngIf="this.studentLoggedIn || this.teacherLoggedIn">Logout</button>
+                style="margin:10px;"
+                (click)="logIn('student')">Student</button>
+        <button type="button" color="warn" mat-raised-button
+                *ngIf="this.role != ''"
+                (click)="logIn('none')">Logout</button>
 
       </div>
     </mat-toolbar>
