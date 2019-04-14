@@ -27,7 +27,7 @@ export class SubmitAssignmentComponent implements OnInit {
               private router: Router,
               private assignmentServ: AssignmentsService) {
     this.assignmentId = this.route.snapshot.paramMap.get('id');
-    this.studentId = 5;
+    this.studentId = 7;
     this.date = new Date();
     this.grade = 0;
   }
@@ -57,7 +57,7 @@ export class SubmitAssignmentComponent implements OnInit {
           this.error = err;
         }
     );
-    this.router.navigateByUrl('/home');
+    this.router.navigateByUrl('/assignments');
   }
 
 }

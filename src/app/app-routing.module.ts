@@ -14,15 +14,15 @@ import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assign
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
+  {path: 'announcements', component: AnnouncementsComponent},
   {path: 'login', component: LoginComponent, /*canActivate: [AuthGuard]*/},
   {path: 'teacher', component: TeachersHomeComponent, /*canActivate: [AuthGuard]*/},
   {path: 'student', component: StudentsHomeComponent},
   {path: 'assignments', component: AssignmentsComponent},
   {path: 'addassignment', component: AddAssignmentComponent},
   {path: 'addannouncement', component: AddAnnouncementComponent },
-  {path: 'addgrade', component: AddGradeComponent },
+  {path: 'gradeassignment/:id', component: AddGradeComponent},
   {path: 'submitassignment/:id', component: SubmitAssignmentComponent},
-
   {path: '**', component: AnnouncementsComponent}
 ];
 
