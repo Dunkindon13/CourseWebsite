@@ -18,7 +18,7 @@ export class AssignmentsComponent implements OnInit {
     assignments: Assignment[];
     error = '';
     success = '';
-
+    today = new Date();
 
     constructor(private assignmentsServ: AssignmentsService,
                 private nav: NavComponent) {

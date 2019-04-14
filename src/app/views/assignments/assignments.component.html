@@ -42,12 +42,13 @@
       <div class="showSummary" [innerHTML]="assignment.body"></div>
 
         <div class="inline" *ngIf="nav.role == 'teacher'">
-          <button mat-raised-button color="primary" routerLink="/addgrade">View Submissions</button>
+
+          <button mat-raised-button color="primary" routerLink="/gradeassignment/{{assignment.id}}">View Submissions</button>
           <button mat-raised-button color="warn" routerLink="/editAssignment">Edit Assignment</button>
         </div>
         <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="warn" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
 
-
+s
        <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
     </mat-expansion-panel>
   </div>
