@@ -58,8 +58,8 @@ export class AssignmentsService {
         );
     }
 
-    updateGrade(assignment: SubmittedAssignment): Observable<any> {
-        return this.http.post(`${this.baseUrl}/updateGrade`, {data: assignment}, {responseType: 'text'}).pipe(
+    updateGrade(assignmentId, studentId, grade): Observable<any> {
+        return this.http.post(`${this.baseUrl}/updateGrade`, {data: assignmentId, studentId, grade}, {responseType: 'text'}).pipe(
             map((res) => {
                 this.submittedAssignments.push(res['data']);
                 return this.submittedAssignments;
