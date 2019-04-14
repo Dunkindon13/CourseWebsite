@@ -43,7 +43,7 @@ export class AddAssignmentComponent implements OnInit {
         console.log(this.addAssignmentForm);
         const args = {
             title: this.addAssignmentForm.value.title,
-            releaseDate: new Date(),
+            releaseDate: this.addAssignmentForm.value.releaseDate,
             dueDate: this.addAssignmentForm.value.dueDate,
             body: this.addAssignmentForm.value.body,
             weight: 0

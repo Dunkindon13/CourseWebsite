@@ -20,7 +20,7 @@ import {AnnouncementsService} from '../../models/announcements.service';
     styleUrls: ['./add-announcement.component.css']
 })
 export class AddAnnouncementComponent implements OnInit {
-
+    today = new Date();
 
   announcements: Announcement[];
   addAnnouncementForm = this.fb.group({
