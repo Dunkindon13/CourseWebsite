@@ -55,16 +55,11 @@
       </ng-container>
 
       <ng-container matColumnDef="submitGrade">
-<<<<<<< HEAD
-        <mat-header-cell *matHeaderCellDef> Submit Grade </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          <button mat-raised-button>Save</button>
-=======
 
         <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Submit Grade </mat-header-cell>
         <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'">
           <button mat-raised-button id = "{{element.studentid}}" (click)="addGrade(element.studentid)">Save</button>
->>>>>>> master
+
         </mat-cell>
       </ng-container>
 

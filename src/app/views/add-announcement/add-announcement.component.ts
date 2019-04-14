@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
 * Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 10, 2019
@@ -6,8 +5,6 @@
 * Main Purpose: TypeScript component for filling out form to add an announcement by a teacher and submitting it to the announcement board.
 */
 
-import {Component, OnInit} from '@angular/core';
-=======
 import { Component, OnInit } from '@angular/core';
 import {Assignment} from '../../models/assignment';
 import {FormBuilder} from '@angular/forms';
@@ -15,7 +12,7 @@ import {AssignmentsService} from '../../models/assignments.service';
 import {Router} from '@angular/router';
 import {Announcement} from '../../models/announcement';
 import {AnnouncementsService} from '../../models/announcements.service';
->>>>>>> master
+
 
 @Component({
     selector: 'app-add-announcement',
@@ -24,13 +21,6 @@ import {AnnouncementsService} from '../../models/announcements.service';
 })
 export class AddAnnouncementComponent implements OnInit {
 
-<<<<<<< HEAD
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
-=======
   announcements: Announcement[];
   addAnnouncementForm = this.fb.group({
     title: [null],
@@ -47,7 +37,6 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit() {
 
   }
->>>>>>> master
 
   onSubmit() {
     // alert('Thanks!');

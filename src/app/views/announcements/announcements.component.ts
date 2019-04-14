@@ -16,16 +16,10 @@ export class AnnouncementsComponent implements OnInit {
   role: string;
   teacherIsLoggedIn = true;
   studentIsLoggedIn = false;
-<<<<<<< HEAD
   constructor(private announcementsServ: AnnouncementsService,
               private route: ActivatedRoute,
               private nav: NavComponent) {
   }
-=======
-
-  constructor(private announcementsServ: AnnouncementsService) { }
-
->>>>>>> master
   ngOnInit() {
     this.getAnnouncements();
   }

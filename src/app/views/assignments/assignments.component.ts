@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Assignment} from '../../models/assignment';
 import {AssignmentsService} from '../../models/assignments.service';
+import {NavComponent} from '../nav/nav.component';
 
 @Component({
     selector: 'app-assignments',
@@ -12,10 +13,9 @@ export class AssignmentsComponent implements OnInit {
     error = '';
     success = '';
 
-    teacherIsLoggedIn = true;
-    studentIsLoggedIn = true;
 
-    constructor(private assignmentsServ: AssignmentsService) {
+    constructor(private assignmentsServ: AssignmentsService,
+                private nav: NavComponent) {
     }
 
     ngOnInit() {

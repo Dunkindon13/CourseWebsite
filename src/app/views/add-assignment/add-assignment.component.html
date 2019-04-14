@@ -93,7 +93,12 @@
 
 <div class="example-full-width">
   <mat-form-field>
-    <input matInput formControlName="dueDate" [min]="today" [matDatepicker]="DueDate" placeholder="Due Date">
+    <input matInput formControlName="releaseDate" [(ngModel)]="ReleaseDate" [min]="today" [matDatepicker]="ReleaseDate" placeholder="Release Date">
+    <mat-datepicker-toggle matSuffix [for]="ReleaseDate"></mat-datepicker-toggle>
+    <mat-datepicker #ReleaseDate></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="dueDate" [min]="this.release" [matDatepicker]="DueDate" placeholder="Due Date">
     <mat-datepicker-toggle matSuffix [for]="DueDate"></mat-datepicker-toggle>
     <mat-datepicker #DueDate></mat-datepicker>
   </mat-form-field>
@@ -102,8 +107,9 @@
   <mat-form-field class="example-full-width">
     <textarea matInput formControlName="body" placeholder="Assignment Description"></textarea>
   </mat-form-field>
-
+<div>
   <mat-card-actions>
     <button mat-raised-button color="primary" type="submit">Submit</button>
   </mat-card-actions>
+</div>
 </form>

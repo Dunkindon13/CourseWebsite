@@ -19,7 +19,7 @@ import {Router} from '@angular/router';
     styleUrls: ['./add-assignment.component.css']
 })
 export class AddAssignmentComponent implements OnInit {
-
+    release: Date;
     assignments: Assignment[];
     today = new Date();
     addAssignmentForm = this.fb.group({
