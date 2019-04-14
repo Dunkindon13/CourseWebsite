@@ -7,7 +7,7 @@ import {FormBuilder} from '@angular/forms';
 @Component({
   selector: 'app-submit-assignment',
   templateUrl: './submit-assignment.component.html',
-  styleUrls: ['./submit-assignment.component.sass']
+  styleUrls: ['./submit-assignment.component.scss']
 })
 export class SubmitAssignmentComponent implements OnInit {
 

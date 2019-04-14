@@ -33,6 +33,16 @@ export class AnnouncementsService {
 
   }
 
+    editAnnouncement(announcement: Announcement): Observable<any> {
+        return this.http.post(`${this.baseUrl}/editAnnouncement`, {data: announcement}, {responseType: 'text'}).pipe(
+            map((res) => {
+                this.announcements.push(res['data']);
+                return this.announcements;
+            }),
+            catchError(this.handleError));
+
+    }
+
 
   private handleError(error: HttpErrorResponse) {
     console.log(error);

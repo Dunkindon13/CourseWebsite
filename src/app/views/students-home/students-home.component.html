@@ -1,3 +1,24 @@
-<p>
-  students-home works!
-</p>
+<!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 8, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: HTML component to show corresponding student's assignments, current and submitted.-->
+
+<div class="inline">
+    <h2>Student's Home Page</h2>
+</div>
+<div class="inline">
+    <h3>Assignments</h3>
+    <p *ngIf="!studentIsLoggedIn">
+        <button mat-raised-button color="primary" routerLink="/assignments">See Assignments</button>
+    </p>
+
+    <p *ngIf="!studentIsLoggedIn">
+        <button mat-raised-button color="accent" routerLink="/submitassignment">Submit Assignment</button>
+    </p>
+</div>
+<div class="wrap">
+    <h3>Announcements</h3>
+    <p *ngIf="!studentIsLoggedIn">
+        <button mat-raised-button color="primary" routerLink="/announcements">See Announcements</button>
+    </p>
+</div>

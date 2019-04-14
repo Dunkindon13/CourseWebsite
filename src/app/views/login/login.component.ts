@@ -1,3 +1,9 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 12, 2019
+* Main Purpose: TypeScript component to login as teacher or student.
+*/
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../models/auth.service';
 import {Router, ActivatedRoute} from '@angular/router';
