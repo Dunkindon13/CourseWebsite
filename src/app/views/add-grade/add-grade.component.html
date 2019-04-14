@@ -35,19 +35,19 @@
         <mat-cell *matCellDef="let element " [ngClass]="'customWidthClass'"> {{element.date}} </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="submission" [ngClass]="'flex-item'" ]>
+      <ng-container matColumnDef="submission" [ngClass]="'flex-item'">
         <mat-header-cell *matHeaderCellDef > submission </mat-header-cell>
         <mat-cell *matCellDef="let element" > {{element.submission}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="currentgrade" >
-        <mat-header-cell *matHeaderCellDef > currentgrade </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef > current grade </mat-header-cell>
         <mat-cell *matCellDef="let element" > {{element.grade}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="grade">
         <mat-header-cell *matHeaderCellDef> Grade (from 0 to 100) </mat-header-cell>
-        <mat-cell *matCellDef="let element" >
+        <mat-cell *matCellDef="let element">
           <mat-form-field >
             <input matInput placeholder="Add Grade" type="number" min="0" max="100" step="1">
           </mat-form-field>
