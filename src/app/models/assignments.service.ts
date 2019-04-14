@@ -4,6 +4,7 @@ import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {SubmittedAssignment} from './submittedAssignment';
+import {Announcement} from './announcement';
 
 @Injectable({
     providedIn: 'root'
@@ -57,6 +58,15 @@ export class AssignmentsService {
         );
     }
 
+    updateGrade(assignment: SubmittedAssignment): Observable<any> {
+        return this.http.post(`${this.baseUrl}/updateGrade`, {data: assignment}, {responseType: 'text'}).pipe(
+            map((res) => {
+                this.submittedAssignments.push(res['data']);
+                return this.submittedAssignments;
+            }),
+            catchError(this.handleError));
+
+    }
 
     private handleError(error: HttpErrorResponse) {
         console.log(error);

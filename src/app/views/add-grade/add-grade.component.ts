@@ -6,6 +6,7 @@ import {FormBuilder} from '@angular/forms';
 import {SubmittedAssignment} from '../../models/submittedAssignment';
 import {variable} from '@angular/compiler/src/output/output_ast';
 import {logger} from 'codelyzer/util/logger';
+import {Announcement} from '../../models/announcement';
 
 
 
@@ -38,10 +39,8 @@ export class AddGradeComponent   implements OnInit {
 
   }
 
-  //
    id: number;
-  // date: Date;
-  // submission: string;
+
 
   ngOnInit() {
     this.sortAss();
@@ -50,11 +49,9 @@ export class AddGradeComponent   implements OnInit {
   sortAss(): void {
     this.assignmentServ.getAllSubmitted().subscribe(
         (res: SubmittedAssignment[]) => {
-          // this.tmpassignments = res;
-          // this.assignments = res;
           this.assignments = [];
 
-          // this.assignments = this.tmpassignments;
+
           // console.log('MY ASSIGNMENT');
           for (const item of res) {
             // console.log(item);
@@ -67,33 +64,32 @@ export class AddGradeComponent   implements OnInit {
 
           }
 
-          // this.assignments = res;
         }
     );
   }
 
-  addGrade(iput7): void {
+  addGrade(stdId): void {
       const args = {
       assignmentId: this.assignmentId,
-      check: iput7
-      // grade: this.grade
+      studentId: stdId,
+      grade: 78
     };
 
     // const args = {Nmae: 'Naenene'};
     // const args = 'args ';
 
-      console.log('Clicked on Ass ID ' + args.assignmentId + ' and student ID ' + args.check);
+      console.log('Clicked on Ass ID ' + args.assignmentId + ' and student ID ' + args.studentId);
 
-    // const assignment = new SubmittedAssignment(args);
-    // this.assignmentServ.submitAssignment(assignment).subscribe(
-    //   (res: SubmittedAssignment) => {
-    //
-    //   }
-    // );
+      const submitAssignment = new SubmittedAssignment(args);
+      console.log(submitAssignment);
+      this.assignmentServ.updateGrade(submitAssignment).subscribe(
+    (res: SubmittedAssignment[]) => {
+        // this.assignments = res;
+    }
+    );
       this.router.navigateByUrl('/gradeassignment/' + args.assignmentId);
   }
 }
-
 
 
 
