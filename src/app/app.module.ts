@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnnouncementsComponent } from './views/announcements/announcements.component';
-import { LoginComponent } from './views/login/login.component';
 import { TeachersHomeComponent } from './views/teachers-home/teachers-home.component';
 import { StudentsHomeComponent } from './views/students-home/students-home.component';
 import { NavComponent } from './views/nav/nav.component';
