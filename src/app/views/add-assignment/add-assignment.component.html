@@ -1,9 +1,8 @@
-/*
-* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+<!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 9, 2019
 * Last Modified: April 11, 2019
-* Main Purpose: HTML component for filling out form to add an assignment by a teacher and submitting it.
-*/
+* Main Purpose: HTML component for filling out form to add an assignment by a teacher and submitting it.-->
+
 <h3>Add Assignment</h3>
 
 <!--
@@ -87,30 +86,30 @@
 
 
 <form (ngSubmit)="onSubmit()" [formGroup]="addAssignmentForm" fxLayout="column" fxLayoutAlign="center center">
-  <mat-form-field class="example-full-width">
-    <input matInput formControlName="title" placeholder="Subject">
-  </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput formControlName="title" placeholder="Subject">
+    </mat-form-field>
 
-<div class="example-full-width">
-  <mat-form-field>
-    <input matInput formControlName="releaseDate" [matDatepicker]="releaseDate" placeholder="Release Date">
-    <mat-datepicker-toggle matSuffix [for]="releaseDate"></mat-datepicker-toggle>
-    <mat-datepicker #releaseDate></mat-datepicker>
-  </mat-form-field>
+    <div class="example-full-width">
+        <mat-form-field>
+            <input matInput formControlName="releaseDate" [matDatepicker]="releaseDate" placeholder="Release Date">
+            <mat-datepicker-toggle matSuffix [for]="releaseDate"></mat-datepicker-toggle>
+            <mat-datepicker #releaseDate></mat-datepicker>
+        </mat-form-field>
 
 
-  <mat-form-field>
-    <input matInput formControlName="dueDate"[matDatepicker]="DueDate" placeholder="Due Date">
-    <mat-datepicker-toggle matSuffix [for]="DueDate"></mat-datepicker-toggle>
-    <mat-datepicker #DueDate></mat-datepicker>
-  </mat-form-field>
-</div>
+        <mat-form-field>
+            <input matInput formControlName="dueDate" [matDatepicker]="DueDate" placeholder="Due Date">
+            <mat-datepicker-toggle matSuffix [for]="DueDate"></mat-datepicker-toggle>
+            <mat-datepicker #DueDate></mat-datepicker>
+        </mat-form-field>
+    </div>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput formControlName="body" placeholder="Assignment Description"></textarea>
-  </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <textarea matInput formControlName="body" placeholder="Assignment Description"></textarea>
+    </mat-form-field>
 
-  <mat-card-actions>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
-  </mat-card-actions>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
 </form>

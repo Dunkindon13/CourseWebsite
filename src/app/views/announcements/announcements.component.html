@@ -1,27 +1,32 @@
+<!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 8, 2019
+* Last Modified: April 10, 2019
+* Main Purpose: HTML component to show all announcements currently on the announcement board.-->
+
 <div class="inline">
-<h3>Announcements </h3>
-<p *ngIf="teacherIsLoggedIn">
-  <button mat-raised-button color="accent" routerLink="/addannouncement">Add announcement</button>
-</p>
+    <h3>Announcements </h3>
+    <p *ngIf="teacherIsLoggedIn">
+        <button mat-raised-button color="accent" routerLink="/addannouncement">Add announcement</button>
+    </p>
 </div>
 <mat-accordion multi="true" class="my-headers-align">
-  <div *ngFor="let announcement of announcements | reverse;">
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          ID: {{announcement.id}}
-        </mat-panel-title>
-        <mat-panel-title>
-          Date: {{announcement.date | date: 'mediumDate'}}
-        </mat-panel-title>
-        <mat-panel-description>
-          Subject: {{announcement.title}}
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div class="showSummary" [innerHTML]="announcement.body"></div>
-      <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
-    </mat-expansion-panel>
-  </div>
+    <div *ngFor="let announcement of announcements | reverse;">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    ID: {{announcement.id}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    Date: {{announcement.date | date: 'mediumDate'}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    Subject: {{announcement.title}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div class="showSummary" [innerHTML]="announcement.body"></div>
+            <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
+        </mat-expansion-panel>
+    </div>
 </mat-accordion>
 
 

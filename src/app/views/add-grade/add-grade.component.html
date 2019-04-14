@@ -1,21 +1,28 @@
+<!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 11, 2019
+* Main Purpose: HTML component to add a grade to an assignment by a teacher and submitting it.-->
+
 <h1>Checking ... </h1>
 
 
 <table mat-table [dataSource]="data" class="mat-elevation-z8">-->
 
-  <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
-    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-    <td><button mat-raised-button (click)="addGrade()"> Add Grade </button></td>
-  </ng-container>
-   <!-- <ng-container>
-    <th>Grade</th>
-    <td mat-cell> Pol Smith </td>
-    <td><button mat-raised-button (click)="addGrade()"> Add Grade </button></td>
-  </ng-container>-->
+    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+        <td>
+            <button mat-raised-button (click)="addGrade()"> Add Grade</button>
+        </td>
+    </ng-container>
+    <!-- <ng-container>
+     <th>Grade</th>
+     <td mat-cell> Pol Smith </td>
+     <td><button mat-raised-button (click)="addGrade()"> Add Grade </button></td>
+   </ng-container>-->
 
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
 </table>
 <!--<table class="table table-stripe" >
   <thead><tr>
