@@ -14,7 +14,8 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
+      <div>
+        <button
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
@@ -22,7 +23,19 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      Course Website
+      Homepage for COMP 201: Introduction to Web Development
+      </div>
+      <div style="margin-left: 35%;">
+        <button *ngIf="!(this.teacherIsLoggedIn)" type="button" color="accent"
+                mat-raised-button
+                style="margin: 10px;"
+                routerLink="/home/teacher">Teacher</button>
+        <button *ngIf="!(this.studentIsLoggedIn)" type="button" color="warn"
+                mat-raised-button
+                style="margin:10px;" routerLink="/home/student">Student</button>
+        <button *ngIf="this.studentLoggedIn || this.teacherLoggedIn">Logout</button>
+
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

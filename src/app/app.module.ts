@@ -36,6 +36,7 @@ import { DummyComponent } from './dummy/dummy.component';
 import { AddAnnouncementComponent } from './views/add-announcement/add-announcement.component';
 import { AddGradeComponent } from './views/add-grade/add-grade.component';
 import { SubmitAssignmentComponent } from './views/submit-assignment/submit-assignment.component';
+import { TempLoginComponent } from './temp-login/temp-login.component';
 
 
 
@@ -54,7 +55,8 @@ import { SubmitAssignmentComponent } from './views/submit-assignment/submit-assi
 
     AddAnnouncementComponent,
     AddGradeComponent,
-    SubmitAssignmentComponent
+    SubmitAssignmentComponent,
+    TempLoginComponent
   ],
   imports: [
     BrowserModule,

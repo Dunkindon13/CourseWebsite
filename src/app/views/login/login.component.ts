@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../models/auth.service';
 import {Router, ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {first} from 'rxjs/operators';
 
 @Component({
     selector: 'app-login',
@@ -39,7 +40,13 @@ export class LoginComponent implements OnInit {
             return;
         }
         this.loading = true;
-        this.authService.login(this.f.username.value, this.f.password.value).pipe.subscribe
+        this.authService.login(this.f.username.value, this.f.password.value)
+            .pipe(first())
+            .subscribe(
+                data => {
+                    this.router.navigateByUrl('/home');
+                }
+            )
 
     }
 
