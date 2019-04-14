@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 8, 2019
+* Last Modified: April 10, 2019
+* Main Purpose: TypeScript component to show all announcements currently on the announcement board.
+*/
+import {Component, OnInit} from '@angular/core';
 import {AnnouncementsService} from '../../models/announcements.service';
 import {Announcement} from '../../models/announcement';
 

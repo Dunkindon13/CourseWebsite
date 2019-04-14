@@ -1,11 +1,18 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 8, 2019
+* Last Modified: April 10, 2019
+* Main Purpose: CSS component to show all announcements currently on the announcement board.
+*/
 mat-panel-title {
-  width: 15%;
+    width: 15%;
 }
 
 mat-panel-description {
-  width: 70%;
+    width: 70%;
 }
-.inline{
+
+.inline {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
