@@ -14,6 +14,7 @@ import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-fi
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 
+
 import {
   MatToolbarModule,
   MatButtonModule,
@@ -21,7 +22,7 @@ import {
   MatIconModule,
   MatListModule,
   MatInputModule,
-  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule, MatDialogModule
+  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule, MatTabsModule, MatDialogModule
 } from '@angular/material';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -81,7 +82,8 @@ import { EditAnnouncementComponent } from './views/edit-announcement/edit-announ
     MatStepperModule,
     MatSnackBarModule,
     MatTableModule,
-    MatDialogModule
+    MatDialogModule,
+      MatTabsModule
 
   ],
   providers: [],

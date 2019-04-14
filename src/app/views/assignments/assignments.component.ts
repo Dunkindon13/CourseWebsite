@@ -16,12 +16,19 @@ import {NavComponent} from '../nav/nav.component';
 })
 export class AssignmentsComponent implements OnInit {
     assignments: Assignment[];
+    ongoing: Assignment[];
+    due: Assignment[];
+    upcoming: Assignment[];
     error = '';
     success = '';
     today = new Date();
 
     constructor(private assignmentsServ: AssignmentsService,
                 private nav: NavComponent) {
+        this.today = new Date();
+        this.ongoing = [];
+        this.due = [];
+        this.upcoming = [];
     }
 
     ngOnInit() {
@@ -31,13 +38,24 @@ export class AssignmentsComponent implements OnInit {
     getAssignments(): void {
         this.assignmentsServ.getAll().subscribe(
             (res: Assignment[]) => {
-                console.log('This Works');
                 this.assignments = res;
+                this.assignments.forEach(element => {
+                    const dueDate = new Date(element.dueDate);
+                    const releaseDate = new Date(element.releaseDate);
+                    if (dueDate >= this.today && releaseDate <= this.today) {
+                        this.ongoing.push(element);
+                    } else if(dueDate < this.today) {
+                        this.due.push(element);
+                    } else {
+                        this.upcoming.push(element);
+                    }
+                });
+
+
             },
             (err) => {
                 this.error = err;
             }
         );
     }
-
 }
