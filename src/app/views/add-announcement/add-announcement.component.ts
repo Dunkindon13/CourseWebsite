@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 * Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 10, 2019
@@ -6,6 +7,15 @@
 */
 
 import {Component, OnInit} from '@angular/core';
+=======
+import { Component, OnInit } from '@angular/core';
+import {Assignment} from '../../models/assignment';
+import {FormBuilder} from '@angular/forms';
+import {AssignmentsService} from '../../models/assignments.service';
+import {Router} from '@angular/router';
+import {Announcement} from '../../models/announcement';
+import {AnnouncementsService} from '../../models/announcements.service';
+>>>>>>> master
 
 @Component({
     selector: 'app-add-announcement',
@@ -14,10 +24,55 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AddAnnouncementComponent implements OnInit {
 
+<<<<<<< HEAD
     constructor() {
     }
 
     ngOnInit() {
     }
+=======
+  announcements: Announcement[];
+  addAnnouncementForm = this.fb.group({
+    title: [null],
+    date: [null],
+    teacherID: [null],
+    body: [null]
+  });
+  success = '';
+  error = '';
 
+  constructor(private fb: FormBuilder, private annSrv: AnnouncementsService, private router: Router) {
+  }
+
+  ngOnInit() {
+
+  }
+>>>>>>> master
+
+  onSubmit() {
+    // alert('Thanks!');
+    // console.log(this.addAnnouncementForm);
+    const args = {
+      teacherID: 77,
+      title: this.addAnnouncementForm.value.title,
+      date: this.addAnnouncementForm.value.date,
+      body: this.addAnnouncementForm.value.body
+    };
+
+    const announcement = new Announcement(args);
+    this.annSrv.addAnnouncement(announcement).subscribe(
+        (res: Announcement[]) => {
+          this.announcements = res;
+          this.success = 'Announcement is supposed to be created';
+          console.log('CL from subscribe to addAnn in add-ann comp.ts', this.announcements);
+          this.addAnnouncementForm.reset();
+        },
+        (err) => {
+          this.error = err;
+        }
+    );
+
+    this.router.navigateByUrl('/announcements');
+
+  }
 }

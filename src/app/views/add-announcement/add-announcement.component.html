@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 * Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 10, 2019
@@ -32,4 +33,35 @@
         // Submit button to submit announcement
         <button mat-raised-button color="primary" type="submit">Submit</button>
     </mat-card-actions>
+=======
+<h3>Add Announcement</h3>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="addAnnouncementForm" fxLayout="column" fxLayoutAlign="center center">
+
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="title" placeholder="Subject">
+  </mat-form-field>
+
+<div>
+  <mat-form-field>
+    <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput formControlName="body" placeholder="Announcement Description"></textarea>
+  </mat-form-field>
+
+
+
+
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
+  </mat-card-actions>
+>>>>>>> master
 </form>

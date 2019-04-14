@@ -1,0 +1,9 @@
+.customWidthClass{
+  flex: 0 0 75px;
+}
+.flex-item{
+  width: 85%;
+  display:flex;
+
+}
+

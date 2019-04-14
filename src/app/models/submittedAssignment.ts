@@ -6,7 +6,7 @@ export class SubmittedAssignment {
     grade: number;
 
 
-    constructor(args) {
+    constructor(args?) {
         if (args) {
 
             this.assignmentId = args.assignmentId;
