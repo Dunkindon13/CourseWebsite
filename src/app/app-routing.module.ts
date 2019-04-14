@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'gradeassignment/:id', component: AddGradeComponent},
   {path: 'submitassignment/:id', component: SubmitAssignmentComponent},
   {path: 'editannouncement/:id', component: EditAnnouncementComponent},
-  {path: 'editassignment/:id', component EditAssignmentComponent}
+  {path: 'editassignment/:id', component: EditAssignmentComponent},
   {path: '**', component: AnnouncementsComponent}
 ];
 
