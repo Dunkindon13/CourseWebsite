@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Assignment} from '../../models/assignment';
 import {AssignmentsService} from '../../models/assignments.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -9,159 +9,102 @@ import {logger} from 'codelyzer/util/logger';
 import {Announcement} from '../../models/announcement';
 
 
-
 @Component({
-  selector: 'app-add-grade',
-  templateUrl: './add-grade.component.html',
-  styleUrls: ['./add-grade.component.css']
+    selector: 'app-add-grade',
+    templateUrl: './add-grade.component.html',
+    styleUrls: ['./add-grade.component.css']
 })
 
 
-export class AddGradeComponent   implements OnInit {
-  displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'currentgrade', 'grade', 'submitGrade'];
-  columnsToDisplay: string[] = this.displayedColumns.slice();
-  // data: PeriodicElement[] = ELEMENT_DATA;
+export class AddGradeComponent implements OnInit {
+    displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'currentgrade', 'grade', 'submitGrade'];
+    columnsToDisplay: string[] = this.displayedColumns.slice();
+    // data: PeriodicElement[] = ELEMENT_DATA;
 
-  @Input() idAssignment: string;
-  assignmentId: number;
-  assignments: SubmittedAssignment[];
-  studentid: number;
-  grade: number;
+    @Input() idAssignment: string;
+    assignmentId: number;
+    assignments: SubmittedAssignment[];
+    studentid: number;
+    grade: number;
+    newGrade: number;
 
-  // error = '';
+    // error = '';
 
-  constructor(
-      private assignmentServ: AssignmentsService,
-      private router: Router,
-      private route: ActivatedRoute) {
+    constructor(
+        private assignmentServ: AssignmentsService,
+        private router: Router,
+        private route: ActivatedRoute) {
 
-    this.assignmentId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
+        this.assignmentId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
 
-  }
-
-   id: number;
-
-
-  ngOnInit() {
-    this.sortAss();
-  }
-
-  sortAss(): void {
-    this.assignmentServ.getAllSubmitted().subscribe(
-        (res: SubmittedAssignment[]) => {
-          this.assignments = [];
-
-
-          // console.log('MY ASSIGNMENT');
-          for (const item of res) {
-            // console.log(item);
-            // console.log(this.assignmentId);
-            // console.log(item.assignmentId);
-            if ( item.assignmentId.toString() === this.assignmentId.toString() ) {
-              this.assignments.push(item);
-              // console.log(item.assignmentId);
-            }
-
-          }
-
-        }
-    );
-  }
-
-  addGrade(stdId): void {
-      const args = {
-      assignmentId: this.assignmentId,
-      studentId: stdId,
-      grade: 78
-    };
-
-    // const args = {Nmae: 'Naenene'};
-    // const args = 'args ';
-
-      console.log('Clicked on Ass ID ' + args.assignmentId + ' and student ID ' + args.studentId);
-
-      const submitAssignment = new SubmittedAssignment(args);
-      console.log(submitAssignment);
-      this.assignmentServ.updateGrade(submitAssignment).subscribe(
-    (res: SubmittedAssignment[]) => {
-        // this.assignments = res;
     }
-    );
-      this.router.navigateByUrl('/gradeassignment/' + args.assignmentId);
-  }
-}
+
+    // id: number;
+
+
+    ngOnInit() {
+        this.sortAss();
+    }
+
+    sortAss(): void {
+        this.assignmentServ.getAllSubmitted().subscribe(
+            (res: SubmittedAssignment[]) => {
+                this.assignments = [];
+                // console.log('MY ASSIGNMENT');
+                for (const item of res) {
+                    // console.log(item);
+                    // console.log(this.assignmentId);
+                    // console.log(item.assignmentId);
+                    if (item.assignmentId.toString() === this.assignmentId.toString()) {
+                        this.assignments.push(item);
+                        // console.log(item.assignmentId);
+                    }
+
+                }
+
+            }
+        );
+    }
 
 
 
 
+    addGrade(stdId, gradeNew): void {
+        const args = {
+            assignmentId: this.assignmentId,
+            studentId: parseInt(stdId, 10),
+            grade: parseInt(gradeNew, 10),
+
+        };
+
+        // const args = {Nmae: 'Naenene'};
+        // const args = 'args ';
+
+        console.log('Clicked on Ass ID ' + this.grade + args.assignmentId + ' and student ID ' + args.studentId + 'mmmm' + args.grade);
 
 
+        const submitAssignment = new SubmittedAssignment(args);
+        console.log(submitAssignment);
+        this.assignmentServ.updateGrade(args.assignmentId, args.studentId, args.grade).subscribe(
+            (res: SubmittedAssignment[]) => {
+                this.assignments = [];
+                res.map((ass) => {
+                        if (ass.assignmentId.toString() === this.assignmentId.toString()) {
+                            ass.grade = this.newGrade;
+                            console.log(this.newGrade);
+                            this.assignments.push(ass);
+                            this.router.navigateByUrl('/assignments');
+                        }
 
+                    }
+                );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*constructor( private assignmentServ: AssignmentsService, private router: Router,
-               private route: ActivatedRoute) {
-    this.assignmentId = this.route.snapshot.paramMap.get('id');
-  }
-
-  ngOnInit() {
-    this.getAssignments();
-  }
-
-  getAssignments(): void {
-    this.assignmentServ.getAllSubmitted().subscribe(
-        (res: SubmittedAssignment[]) => {
-          console.log('This Works');
-          this.assignments = res;
-          console.log(this.assignments);
-          this.assignments = this.assignments.filter(element => {
-            return element.assignmentId !== this.assignmentId;
-          });
-          console.log(this.assignments);
-        },
-        (err) => {
-          this.error = err;
-        }
-    );
-
-  }
-
-
-
-}*/
-/*
-export interface PeriodicElement {
-  name: string;
-  position: number;
+            }
+        );
+    }
 
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen'},
-  {position: 2, name: 'Helium'},
-  {position: 3, name: 'Lithium'},
-];
-*/
+
+
+
 

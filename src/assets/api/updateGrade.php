@@ -11,11 +11,11 @@ if(mysqli_connect_errno()) {
     echo "Connected!";
 }
 
-$assignmentId = mysqli_real_escape_string($connection, trim($request->data->assignmentId));
-$studentId = mysqli_real_escape_string($connection, trim($request->data->studentId));
+$assignmentId = mysqli_real_escape_string($connection, trim($request->data));
+$studentId = mysqli_real_escape_string($connection, trim($request->studentId));
 //$date = mysqli_real_escape_string($connection, trim($request->data->date));
 //$submission = mysqli_real_escape_string($connection, trim($request->data->submission));
-$newgrade = mysqli_real_escape_string($connection, trim($request->data->grade));
+$newgrade = mysqli_real_escape_string($connection, trim($request->grade));
 
 echo $assignmentId."...". $studentId. "... New Grade ...". $newgrade;
 
