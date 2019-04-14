@@ -5,7 +5,7 @@
 
 <div class="inline">
 <h3>Announcements </h3>
-<p *ngIf="teacherIsLoggedIn">
+<p *ngIf="nav.role == 'teacher';">
   <button mat-raised-button color="accent" routerLink="/addannouncement">Add announcement</button>
 </p>
 </div>

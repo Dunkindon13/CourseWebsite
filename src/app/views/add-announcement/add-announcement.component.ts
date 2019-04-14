@@ -13,12 +13,14 @@ import {Router} from '@angular/router';
 import {Announcement} from '../../models/announcement';
 import {AnnouncementsService} from '../../models/announcements.service';
 
+
 @Component({
     selector: 'app-add-announcement',
     templateUrl: './add-announcement.component.html',
     styleUrls: ['./add-announcement.component.css']
 })
 export class AddAnnouncementComponent implements OnInit {
+
 
   announcements: Announcement[];
   addAnnouncementForm = this.fb.group({
@@ -36,6 +38,7 @@ export class AddAnnouncementComponent implements OnInit {
   ngOnInit() {
 
   }
+
 
   onSubmit() {
     // alert('Thanks!');

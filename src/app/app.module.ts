@@ -22,7 +22,7 @@ import {
   MatIconModule,
   MatListModule,
   MatInputModule,
-  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule,
+  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule, MatDialogModule
 } from '@angular/material';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -44,7 +44,6 @@ import { EditAnnouncementComponent } from './views/edit-announcement/edit-announ
   declarations: [
     AppComponent,
     AnnouncementsComponent,
-    LoginComponent,
     TeachersHomeComponent,
     StudentsHomeComponent,
     NavComponent,
@@ -83,7 +82,7 @@ import { EditAnnouncementComponent } from './views/edit-announcement/edit-announ
     MatStepperModule,
     MatSnackBarModule,
     MatTableModule,
-
+    MatDialogModule
 
   ],
   providers: [],

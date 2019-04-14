@@ -7,6 +7,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AnnouncementsService} from '../../models/announcements.service';
 import {Announcement} from '../../models/announcement';
+import {ActivatedRoute} from '@angular/router';
+import {NavComponent} from '../nav/nav.component';
 
 @Component({
   selector: 'app-announcements',
@@ -17,11 +19,13 @@ export class AnnouncementsComponent implements OnInit {
   announcements: Announcement[];
   error = '';
   success = '';
+  role: string;
   teacherIsLoggedIn = true;
   studentIsLoggedIn = false;
-
-  constructor(private announcementsServ: AnnouncementsService) { }
-
+  constructor(private announcementsServ: AnnouncementsService,
+              private route: ActivatedRoute,
+              private nav: NavComponent) {
+  }
   ngOnInit() {
     this.getAnnouncements();
   }
@@ -37,5 +41,6 @@ export class AnnouncementsComponent implements OnInit {
         }
     );
   }
+
 }
 
