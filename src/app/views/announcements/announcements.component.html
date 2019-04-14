@@ -27,7 +27,7 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="showSummary" [innerHTML]="announcement.body"></div>
-      <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
+      <div class="inline" *ngIf="teacherIsLoggedIn"><button mat-raised-button color="primary" routerLink="/editannouncement/{{announcement.id}}">Edit</button></div>
     </mat-expansion-panel>
   </div>
 </mat-accordion>
