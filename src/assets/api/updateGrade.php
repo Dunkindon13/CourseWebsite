@@ -16,7 +16,7 @@ $assignmentId = mysqli_real_escape_string($connection, trim($request->data));
 $studentId = mysqli_real_escape_string($connection, trim($request->studentId));
 $newgrade = mysqli_real_escape_string($connection, trim($request->grade));
 
-//echo $assignmentId."...". $studentId. "... New Grade ...". $newgrade;
+//echo $assignmentId."...". $studentId. "... New Grade ...". $newgrade;it
 
 
 $sql = "UPDATE `submitted_assignments` SET `grade`=$newgrade WHERE `assignment_id`=$assignmentId && `student_id`=$studentId";

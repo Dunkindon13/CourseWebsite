@@ -15,6 +15,7 @@ import {AddGradeComponent} from './views/add-grade/add-grade.component';
 import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assignment.component';
 import {EditAnnouncementComponent} from './views/edit-announcement/edit-announcement.component';
 import {EditAssignmentComponent} from './views/edit-assignment/edit-assignment.component';
+import {AuthGuard} from './controllers/auth.guard';
 import {DeleteAnnouncementComponent} from './views/delete-announcement/delete-announcement.component';
 
 const routes: Routes = [
@@ -33,7 +34,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
