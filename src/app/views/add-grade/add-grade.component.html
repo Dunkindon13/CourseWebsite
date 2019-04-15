@@ -10,7 +10,7 @@
 <div style="padding: 32px">
 
     <div *ngIf="assignments">
-
+        <!--Use mat-table to display all submissions for a given assignment-->
         <mat-table #table [dataSource]="assignments" class="mat-elevation-z8">
 
 
@@ -37,9 +37,9 @@
 
             <ng-container matColumnDef="currentgrade" >
                 <mat-header-cell *matHeaderCellDef > current grade </mat-header-cell>
-                <mat-cell *matCellDef="let element" > {{element.grade}} </mat-cell>
+                <mat-cell *matCellDef="let element" id="current-grade"> {{element.grade}}% </mat-cell>
             </ng-container>
-
+            <!--Small form to set/update grade...[(ngModel)] enters new grade as is typed.-->
             <ng-container matColumnDef="grade">
                 <mat-header-cell *matHeaderCellDef> Grade (from 0 to 100) </mat-header-cell>
                 <mat-cell *matCellDef="let element">
@@ -52,7 +52,7 @@
             <ng-container matColumnDef="submitGrade">
                 <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Submit Grade </mat-header-cell>
                 <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'">
-                    <button mat-raised-button id = "{{element.studentid}}" (click)="addGrade(element.studentid, element.grade)">Save</button>
+                    <button mat-raised-button color="primary" type="button" id= "{{element.studentid}}" (click)="addGrade(element.studentid, element.grade)">Save</button>
                 </mat-cell>
             </ng-container>
 

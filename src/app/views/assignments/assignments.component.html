@@ -1,6 +1,6 @@
 <!--* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 9, 2019
-* Last Modified: April 14, 2019
+* Last Modified: April 15, 2019
 * Main Purpose: HTML component to show all assignments, current and submitted.-->
 
 <!--<p *ngFor="let assignment of assignments">{{assignment.id}}</p>-->
@@ -45,7 +45,6 @@
                 <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
 
 
-                <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
             </mat-expansion-panel>
         </div>
     </mat-accordion>
@@ -85,7 +84,6 @@
                 <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{ongoingAgnmt.id}}">Submit assignment</button></div>
 
 
-                <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
             </mat-expansion-panel>
         </div>
     </mat-accordion>
@@ -126,7 +124,6 @@
                     <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{completedAgnmt.id}}">Submit assignment</button></div>
 
 
-                    <!--<button mat-raised-button color="accent" routerLink="/seasons/{{show.id}}">Details</button>-->
                 </mat-expansion-panel>
             </div>
         </mat-accordion>

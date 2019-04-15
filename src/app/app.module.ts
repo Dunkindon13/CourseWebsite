@@ -12,8 +12,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AnnouncementsComponent} from './views/announcements/announcements.component';
-import {TeachersHomeComponent} from './views/teachers-home/teachers-home.component';
-import {StudentsHomeComponent} from './views/students-home/students-home.component';
 import {NavComponent} from './views/nav/nav.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import {MatFormFieldModule, MatFormFieldControl} from '@angular/material/form-field';
@@ -48,14 +46,13 @@ import {AddGradeComponent} from './views/add-grade/add-grade.component';
 import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assignment.component';
 import {EditAnnouncementComponent} from './views/edit-announcement/edit-announcement.component';
 import {EditAssignmentComponent} from './views/edit-assignment/edit-assignment.component';
+import { DeleteAnnouncementComponent } from './views/delete-announcement/delete-announcement.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         AnnouncementsComponent,
-        TeachersHomeComponent,
-        StudentsHomeComponent,
         NavComponent,
         ReversePipe,
         AssignmentsComponent,
@@ -64,7 +61,8 @@ import {EditAssignmentComponent} from './views/edit-assignment/edit-assignment.c
         AddGradeComponent,
         SubmitAssignmentComponent,
         EditAnnouncementComponent,
-        EditAssignmentComponent
+        EditAssignmentComponent,
+        DeleteAnnouncementComponent
     ],
     imports: [
         BrowserModule,

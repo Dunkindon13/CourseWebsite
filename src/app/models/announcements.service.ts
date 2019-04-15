@@ -6,7 +6,7 @@
 */
 
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Announcement} from './announcement';
 import {Observable, throwError} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
@@ -39,6 +39,18 @@ export class AnnouncementsService {
                 return this.announcements;
             }),
             catchError(this.handleError));
+    }
+
+    deleteAnnouncement(id: number): Observable<any> {
+        const options = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+            }),
+            body: {
+                id
+            }
+        };
+        return this.http.delete(`${this.baseUrl}/deleteAnnouncement`, options);
     }
 
     // Announcement edit function. calling API, passing Announcement object.
