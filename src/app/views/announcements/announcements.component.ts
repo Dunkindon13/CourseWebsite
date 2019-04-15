@@ -9,6 +9,8 @@ import {AnnouncementsService} from '../../models/announcements.service';
 import {Announcement} from '../../models/announcement';
 import {ActivatedRoute} from '@angular/router';
 import {NavComponent} from '../nav/nav.component';
+import {MatPaginator, PageEvent} from '@angular/material';
+
 
 @Component({
   selector: 'app-announcements',
@@ -62,6 +64,7 @@ export class AnnouncementsComponent implements OnInit {
         }
     );
   }
+
 
 }
 

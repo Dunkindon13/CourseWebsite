@@ -27,7 +27,6 @@ export class AddGradeComponent implements OnInit {
     displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'currentgrade', 'grade', 'submitGrade'];
     columnsToDisplay: string[] = this.displayedColumns.slice();
 
-
     @Input() idAssignment: string;
     assignmentId: number;
     assignments: SubmittedAssignment[];
@@ -42,6 +41,7 @@ export class AddGradeComponent implements OnInit {
         private router: Router,
         private route: ActivatedRoute) {
 
+        // Get Assignment id from URL route.
         this.assignmentId = parseInt(this.route.snapshot.paramMap.get('id'), 10);
 
     }
@@ -66,6 +66,7 @@ export class AddGradeComponent implements OnInit {
         );
     }
 
+    // This function sets/updates grade, by calling the updateGrade file in the API through the assignment service.
    addGrade(stdId, gradeNew): void {
         const args = {
             assignmentId: this.assignmentId,
@@ -88,7 +89,7 @@ export class AddGradeComponent implements OnInit {
                             assgm.grade = this.newGrade;
                             // console.log(args.grade);
                             this.grade = assgm.grade;
-                            this.router.navigateByUrl('/assignments');
+                            this.router.navigateByUrl('/assignments'); // redirect user to assignments page.
 
                         }
                     }

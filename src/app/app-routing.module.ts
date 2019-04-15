@@ -7,8 +7,6 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {TeachersHomeComponent} from './views/teachers-home/teachers-home.component';
-import {StudentsHomeComponent} from './views/students-home/students-home.component';
 import {AnnouncementsComponent} from './views/announcements/announcements.component';
 import {AssignmentsComponent} from './views/assignments/assignments.component';
 import {AddAssignmentComponent} from './views/add-assignment/add-assignment.component';
@@ -17,13 +15,12 @@ import {AddGradeComponent} from './views/add-grade/add-grade.component';
 import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assignment.component';
 import {EditAnnouncementComponent} from './views/edit-announcement/edit-announcement.component';
 import {EditAssignmentComponent} from './views/edit-assignment/edit-assignment.component';
+import {DeleteAnnouncementComponent} from './views/delete-announcement/delete-announcement.component';
 
 const routes: Routes = [
   {path: 'home', component: AnnouncementsComponent},
   {path: 'home/:role', component: AnnouncementsComponent, /*canActivate: [AuthGuard]*/},
   {path: 'announcements', component: AnnouncementsComponent},
-  {path: 'teacher', component: TeachersHomeComponent, /*canActivate: [AuthGuard]*/},
-  {path: 'student', component: StudentsHomeComponent},
   {path: 'assignments', component: AssignmentsComponent},
   {path: 'addassignment', component: AddAssignmentComponent},
   {path: 'addannouncement', component: AddAnnouncementComponent },
@@ -31,6 +28,7 @@ const routes: Routes = [
   {path: 'submitassignment/:id', component: SubmitAssignmentComponent},
   {path: 'editannouncement/:id', component: EditAnnouncementComponent},
   {path: 'editassignment/:id', component: EditAssignmentComponent},
+  {path: 'deleteannouncement/:id', component: DeleteAnnouncementComponent},
   {path: '**', component: AnnouncementsComponent}
 ];
 

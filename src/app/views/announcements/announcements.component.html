@@ -5,23 +5,29 @@
 
 <div class="inline">
 <h3>Announcements </h3>
+  <!--If user is logged in as a teacher, display add announcement button-->
 <p *ngIf="nav.role == 'teacher';">
   <button mat-raised-button color="accent" routerLink="/addannouncement">Add announcement</button>
 </p>
 </div>
 
-<mat-paginator [length]="50"
+<!--Allow for pagination of announcements-->
+
+<mat-paginator [length]="announcements.length"
                [pageSize]="10"
-               [pageSizeOptions]="[1, 5, 10, 50]">
+               [pageSizeOptions]="[1, 5, 10, 50]"
+               [showFirstLastButtons]="true" [length]="totalSize"
+               [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">
 
 </mat-paginator>
 
 <mat-accordion multi="true" class="my-headers-align">
+  <!--Use reverse pipe to display announcements beginning with most recently posted-->
   <div *ngFor="let announcement of announcements | reverse;">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
-          ID: {{announcement.id}}
+          Announcement #{{announcement.id}}
         </mat-panel-title>
         <mat-panel-title>
           Teacher ID: {{announcement.teacherid}}
@@ -33,8 +39,11 @@
           Subject: {{announcement.title}}
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <div class="showSummary" [innerHTML]="announcement.body"></div>
-      <div class="inline" *ngIf="nav.role == 'teacher';"><button mat-raised-button color="primary" routerLink="/editannouncement/{{announcement.id}}">Edit</button></div>
+      <div [innerHTML]="announcement.body"></div>
+      <div class="inline" *ngIf="nav.role == 'teacher';">
+        <button mat-raised-button color="primary" routerLink="/editannouncement/{{announcement.id}}">Edit</button>
+        <button mat-raised-button color="warn" routerLink="/deleteannouncement/{{announcement.id}}">Delete</button>
+    </div>
     </mat-expansion-panel>
   </div>
 </mat-accordion>

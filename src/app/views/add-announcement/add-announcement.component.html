@@ -1,16 +1,18 @@
-<!--Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya-->
+<!--Authors: Dmitry Bashmakov, Mathias Donath, Lidiya Sokolovskya, Joshua Fagen-->
 <!--Date Created: April 10, 2019-->
 <!--Last Modified: April 11, 2019-->
 <!--Main Purpose: HTML component for filling out form to add an announcement by a teacher and submitting it to the announcement board.-->
 
 <h3>Add Announcement</h3>
 
+<!--Call submit on form submission to make API call...use formGroup to pass data to .ts file-->
 <form (ngSubmit)="onSubmit()" [formGroup]="addAnnouncementForm" fxLayout="column" fxLayoutAlign="center center">
 
     <mat-form-field class="example-full-width">
         <input matInput formControlName="title" placeholder="Subject">
     </mat-form-field>
 
+    <!--Limit date picker, so that date before today can't be selected-->
     <div>
         <mat-form-field>
             <input matInput formControlName="date" [min]="today" [matDatepicker]="picker" placeholder="Choose a date">

@@ -19,6 +19,7 @@ import {Router} from '@angular/router';
     styleUrls: ['./add-assignment.component.css']
 })
 export class AddAssignmentComponent implements OnInit {
+    // Use variable release to set release date prior to submission via [(NgModel)], allowing us to restrict dueDate selection
     release: Date;
     assignments: Assignment[];
     today = new Date();
@@ -38,10 +39,11 @@ export class AddAssignmentComponent implements OnInit {
 
     }
 
+    // This function takes the form data and passes it through the service to make the API call.
     onSubmit() {
-        alert('Thanks!');
         console.log(this.addAssignmentForm);
         const args = {
+            // Get values from formGroup
             title: this.addAssignmentForm.value.title,
             releaseDate: this.addAssignmentForm.value.releaseDate,
             dueDate: this.addAssignmentForm.value.dueDate,
@@ -53,8 +55,6 @@ export class AddAssignmentComponent implements OnInit {
         this.assignmentServ.addAssignment(assignment).subscribe(
             (res: Assignment[]) => {
                 this.assignments = res;
-                this.success = 'Assignment Created Successfully!';
-                console.log(this.assignments);
                 this.addAssignmentForm.reset();
             },
             (err) => {
@@ -62,7 +62,7 @@ export class AddAssignmentComponent implements OnInit {
             }
         );
 
-        this.router.navigateByUrl('/assignments');
+        this.router.navigateByUrl('/assignments'); // Redirect user to assignments page.
 
     }
 
