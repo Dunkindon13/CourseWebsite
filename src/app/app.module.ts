@@ -22,7 +22,14 @@ import {
   MatIconModule,
   MatListModule,
   MatInputModule,
-  MatRadioModule, MatNativeDateModule, MatCardModule, MatStepperModule, MatSnackBarModule, MatTabsModule, MatDialogModule
+  MatRadioModule,
+  MatNativeDateModule,
+  MatCardModule,
+  MatStepperModule,
+  MatSnackBarModule,
+  MatTabsModule,
+  MatDialogModule,
+  MatPaginatorModule
 } from '@angular/material';
 import {FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -85,7 +92,8 @@ import { EditAssignmentComponent } from './views/edit-assignment/edit-assignment
     MatSnackBarModule,
     MatTableModule,
     MatDialogModule,
-      MatTabsModule
+      MatTabsModule,
+      MatPaginatorModule
 
   ],
   providers: [],

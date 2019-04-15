@@ -1,3 +1,11 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: .
+*/
+
+
 import {Injectable} from '@angular/core';
 import {Assignment} from './assignment';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
@@ -38,6 +46,7 @@ export class AssignmentsService {
 
     }
 
+    // Gets all submitted assignments
     getAllSubmitted(): Observable<SubmittedAssignment[]> {
         return this.http.get(`${this.baseUrl}/readSubmittedAssignments`).pipe(
             map((res) => {
@@ -57,7 +66,7 @@ export class AssignmentsService {
             catchError(this.handleError)
         );
     }
-
+ //  update grade in submitted_assignments. The input: assignmentId, studentId, grade
     updateGrade(assignmentId, studentId, grade): Observable<any> {
         return this.http.post(`${this.baseUrl}/updateGrade`, {data: assignmentId, studentId, grade}, {responseType: 'text'}).pipe(
             map((res) => {

@@ -1,8 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
+
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
+
     <mat-toolbar>{{this.title}}</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="home">Home/Announcements</a>
@@ -11,7 +13,8 @@
       <a *ngIf="studentLoggedIn"mat-list-item routerLink="student">Student's cabinet</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
+
+  <mat-sidenav-content >
     <mat-toolbar color="primary">
       <div>
         <button
@@ -24,7 +27,8 @@
       </button>
       Homepage for COMP 201: Introduction to Web Development
       </div>
-      <div style="margin-left: 35%;">
+
+      <div style="margin-left: 25%;">
         <button *ngIf="!(this.role == 'teacher')" type="button" color="accent"
                 mat-raised-button
                 style="margin: 10px;"
@@ -38,8 +42,11 @@
                 (click)="logIn('none')">Logout</button>
 
       </div>
+
     </mat-toolbar>
+
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
+
 </mat-sidenav-container>

@@ -28,6 +28,7 @@ export class AnnouncementsComponent implements OnInit {
   }
   ngOnInit() {
     this.getAnnouncements();
+
   }
 
   getAnnouncements(): void {
@@ -38,6 +39,26 @@ export class AnnouncementsComponent implements OnInit {
       },
         (err) => {
           this.error = err;
+        }
+    );
+  }
+
+  getAmountOfAnnouncements(): void {
+    this.announcementsServ.getAll().subscribe(
+        (res) => {
+          console.log ('AAAAAAAAAAAA');
+          if (res[0]) {
+            console.log ('AAAAAAAAAAAA');
+            this.announcements = [];
+            res.forEach((item) => {
+              item = new Announcement(item);
+              this.announcements.push(item);
+            });
+
+          } else {
+            console.warn(res);
+          }
+
         }
     );
   }
