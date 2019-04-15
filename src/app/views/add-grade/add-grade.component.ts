@@ -1,3 +1,10 @@
+/* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 14, 2019
+* Main Purpose:  Filter assignment. Display only one which was clicked. Option to add
+*                a grade to the filtered assignment.                            */
+
+
 import {Component, Input, OnInit} from '@angular/core';
 import {Assignment} from '../../models/assignment';
 import {AssignmentsService} from '../../models/assignments.service';
@@ -19,7 +26,7 @@ import {Announcement} from '../../models/announcement';
 export class AddGradeComponent implements OnInit {
     displayedColumns: string[] = ['ass_id', 'studentid', 'date', 'submission', 'currentgrade', 'grade', 'submitGrade'];
     columnsToDisplay: string[] = this.displayedColumns.slice();
-    // data: PeriodicElement[] = ELEMENT_DATA;
+
 
     @Input() idAssignment: string;
     assignmentId: number;
@@ -28,7 +35,7 @@ export class AddGradeComponent implements OnInit {
     grade: number;
     newGrade: number;
 
-    // error = '';
+    error = '';
 
     constructor(
         private assignmentServ: AssignmentsService,
@@ -39,25 +46,18 @@ export class AddGradeComponent implements OnInit {
 
     }
 
-    // id: number;
-
-
     ngOnInit() {
-        this.sortAss();
+        this.filterAssignment();
     }
-
-    sortAss(): void {
+    // filter assignments by the click on it.
+    filterAssignment(): void {
         this.assignmentServ.getAllSubmitted().subscribe(
             (res: SubmittedAssignment[]) => {
                 this.assignments = [];
-                // console.log('MY ASSIGNMENT');
                 for (const item of res) {
-                    // console.log(item);
-                    // console.log(this.assignmentId);
-                    // console.log(item.assignmentId);
                     if (item.assignmentId.toString() === this.assignmentId.toString()) {
                         this.assignments.push(item);
-                        // console.log(item.assignmentId);
+
                     }
 
                 }
@@ -66,10 +66,7 @@ export class AddGradeComponent implements OnInit {
         );
     }
 
-
-
-
-    addGrade(stdId, gradeNew): void {
+   addGrade(stdId, gradeNew): void {
         const args = {
             assignmentId: this.assignmentId,
             studentId: parseInt(stdId, 10),
@@ -77,29 +74,29 @@ export class AddGradeComponent implements OnInit {
 
         };
 
-        // const args = {Nmae: 'Naenene'};
-        // const args = 'args ';
 
         console.log('Clicked on Ass ID ' + this.grade + args.assignmentId + ' and student ID ' + args.studentId + 'mmmm' + args.grade);
 
 
-        const submitAssignment = new SubmittedAssignment(args);
-        console.log(submitAssignment);
+       // Call to upgrade grade  in submitted_assignments as per assignmentId and studentId
         this.assignmentServ.updateGrade(args.assignmentId, args.studentId, args.grade).subscribe(
             (res: SubmittedAssignment[]) => {
                 this.assignments = [];
-                res.map((ass) => {
-                        if (ass.assignmentId.toString() === this.assignmentId.toString()) {
-                            ass.grade = this.newGrade;
-                            console.log(this.newGrade);
-                            this.assignments.push(ass);
+                res.map((assgm) => {
+                        if (assgm.assignmentId.toString() === this.assignmentId.toString()) {
+                            console.log(assgm.grade);
+                            assgm.grade = this.newGrade;
+                            // console.log(args.grade);
+                            this.grade = assgm.grade;
                             this.router.navigateByUrl('/assignments');
-                        }
 
+                        }
                     }
                 );
-
-            }
+            },
+         (err) => {
+            this.error = err;
+        }
         );
     }
 

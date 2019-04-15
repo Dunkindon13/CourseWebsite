@@ -1,3 +1,11 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 8, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: Update of submitted_assignments with a new grade according to assignmentId and studentId
+*/
+
+
 <?php
 require 'connect.php';
 
@@ -13,31 +21,12 @@ if(mysqli_connect_errno()) {
 
 $assignmentId = mysqli_real_escape_string($connection, trim($request->data));
 $studentId = mysqli_real_escape_string($connection, trim($request->studentId));
-//$date = mysqli_real_escape_string($connection, trim($request->data->date));
-//$submission = mysqli_real_escape_string($connection, trim($request->data->submission));
 $newgrade = mysqli_real_escape_string($connection, trim($request->grade));
 
-echo $assignmentId."...". $studentId. "... New Grade ...". $newgrade;
-
-//$newgrade =
-//$sql = "UPDATE `submitted_assignments` SET `grade`=89 WHERE `assignment_id`=4 && `student_id`=7";
+//echo $assignmentId."...". $studentId. "... New Grade ...". $newgrade;
 
 
 $sql = "UPDATE `submitted_assignments` SET `grade`=$newgrade WHERE `assignment_id`=$assignmentId && `student_id`=$studentId";
-
-
-// function updateGrade($grade,$studentId){
-//     $newGrade= $_POST["newgrade"];
-//     $sql = "UPDATE `submitted_assignments` SET grade =: $grade WHERE studentId = :studentId";
-//
-//}
-
-
-
-
-
-
-
 
 
     $result = mysqli_query($connection,$sql);
