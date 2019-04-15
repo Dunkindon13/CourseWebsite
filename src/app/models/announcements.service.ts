@@ -2,7 +2,7 @@
 * Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 10, 2019
 * Last Modified: April 15, 2019
-* Main Purpose: Interaction with api to get, add and update announcement information and provide it to the component that requested it.
+* Main Purpose: Interaction with api to get, add, update, and delete announcement information and provide it to the component that requested it.
 */
 
 import {Injectable} from '@angular/core';
@@ -41,6 +41,7 @@ export class AnnouncementsService {
             catchError(this.handleError));
     }
 
+    // Call to delete an announcement
     deleteAnnouncement(id: number): Observable<any> {
         const options = {
             headers: new HttpHeaders({
@@ -63,6 +64,8 @@ export class AnnouncementsService {
             catchError(this.handleError));
     }
 
+
+    // Error Handler
     private handleError(error: HttpErrorResponse) {
         console.log(error);
         return throwError('Error! There must be some mistake in the code.');

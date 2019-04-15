@@ -1,3 +1,9 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 15, 2019
+* Main Purpose: Class File for Announcement
+*/
 export class Announcement {
     id: number;
     teacherid: number;

@@ -4,7 +4,7 @@
 * Authors: Mathias Donath, Josh Fagen
 * Date Created: April 10, 2019
 * Last Modified: April 14, 2019
-* Main Purpose: .
+* Main Purpose: Establish connection to database
 */
 
 define('DB_HOST', 'localhost:81');

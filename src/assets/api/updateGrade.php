@@ -12,12 +12,6 @@ $postdata = file_get_contents("php://input");
 
 $request = json_decode($postdata);
 
-if(mysqli_connect_errno()) {
-    echo "Failed to connect to database";
-} else {
-    echo "Connected!";
-}
-
 $assignmentId = mysqli_real_escape_string($connection, trim($request->data));
 $studentId = mysqli_real_escape_string($connection, trim($request->studentId));
 $newgrade = mysqli_real_escape_string($connection, trim($request->grade));

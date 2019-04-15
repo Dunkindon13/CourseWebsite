@@ -1,6 +1,5 @@
 
 <?php
-
 /*
 * Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 10, 2019
@@ -10,21 +9,21 @@
 
 require 'connect.php';
 
+// get data from service
 $postdata = file_get_contents("php://input");
 
+// Decode JSON data
 $request = json_decode($postdata);
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to database";
-} else {
-    echo "Connected!";
-}
 
+// trim and remove escape characters from inputs
 $teacherID = mysqli_real_escape_string($connection, trim($request->data->teacherid));
 $date = mysqli_real_escape_string($connection, trim($request->data->date));
 $title = mysqli_real_escape_string($connection, trim($request->data->title));
 $body = mysqli_real_escape_string($connection, trim($request->data->body));
 
+// use inputs in SQL query
 $sql = "INSERT INTO `announcements_table`(`teacherID`, `date`, `title`, `body`) VALUES ('$teacherID', '$date', '$title', '$body')";
 
+// execute SQL query
 $result = mysqli_query($connection, $sql);

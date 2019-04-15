@@ -9,16 +9,13 @@
 
 require 'connect.php';
 
+// Unpack data from service
 $postdata = file_get_contents("php://input");
 
+//De-JSONify data
 $request = json_decode($postdata);
 
-if (mysqli_connect_errno()) {
-    echo "Failed to connect to database";
-} else {
-    echo "Connected!";
-}
-
+// Trim and remove escape characters from data
 $id = mysqli_real_escape_string($connection, trim($request->data->id));
 $teacherID = mysqli_real_escape_string($connection, trim($request->data->teacherid));
 $date = mysqli_real_escape_string($connection, trim($request->data->date));
@@ -27,8 +24,8 @@ $body = mysqli_real_escape_string($connection, trim($request->data->body));
 
 $id = intval($id);
 
-echo "Ann edit: " . $id . "..." . $teacherID . "..." . "..." . $title . "..." . $body;
-
+// Create query
 $sql = "UPDATE `announcements_table` SET `teacherID`=$teacherID,`date`='$date',`title`='$title',`body`='$body' WHERE `id`=$id";
 
+// Execute Query
 $result = mysqli_query($connection, $sql);
