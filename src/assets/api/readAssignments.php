@@ -1,11 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2019-04-09
- * Time: 3:10 PM
- */
 
+/*
+* Authors: Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: .
+*/
 
 
 // Returns list of assignments

@@ -1,4 +1,12 @@
 <?php
+
+/*
+* Authors: Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: .
+*/
+
 require 'connect.php';
 $assignments = [];
 $query = "SELECT * FROM submitted_assignments";

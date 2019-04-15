@@ -1,5 +1,15 @@
 <?php
+
+/*
+* Authors: Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: .
+*/
+
 require 'connect.php';
+
+
 
 //// Get the posted data.
 $postdata = file_get_contents("php://input");

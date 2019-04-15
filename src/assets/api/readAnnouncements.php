@@ -1,11 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2019-04-09
- * Time: 10:55 AM
- */
-// Returns list of announcements
+/*
+* Authors: Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 15, 2019
+* Main Purpose: Returns list of announcements.
+*/
 
 require 'connect.php';
 $announcements = [];

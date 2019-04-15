@@ -1,10 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2019-04-09
- * Time: 10:49 AM
- */
+
+/*
+* Authors: Mathias Donath, Josh Fagen
+* Date Created: April 10, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: .
+*/
+
 define('DB_HOST', 'localhost:81');
 define('DB_USER', 'root');
 define('DB_PASS', '');

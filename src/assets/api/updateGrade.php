@@ -1,3 +1,4 @@
+<?php
 /*
 * Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 8, 2019
@@ -5,8 +6,6 @@
 * Main Purpose: Update of submitted_assignments with a new grade according to assignmentId and studentId
 */
 
-
-<?php
 require 'connect.php';
 
 $postdata = file_get_contents("php://input");
