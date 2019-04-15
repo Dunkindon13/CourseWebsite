@@ -8,8 +8,9 @@
 
 require 'connect.php';
 $passed = file_get_contents("php://input");
-echo "$passed";
-$id = $passed.id;
+$passed = json_decode($passed);
+$id = (int)$passed->id;
+echo "$id";
 
 $id = mysqli_real_escape_string($connection, $id);
 if (mysqli_connect_errno()) {
@@ -19,3 +20,4 @@ if (mysqli_connect_errno()) {
 }
 
 $sql = "DELETE FROM announcements_table WHERE id = $id";
+$result = mysqli_query($connection, $sql);

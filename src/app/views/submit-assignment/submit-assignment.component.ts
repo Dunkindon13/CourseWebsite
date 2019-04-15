@@ -1,3 +1,9 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 11, 2019
+* Main Purpose: TypeScript File for Submit Assignment component
+*/
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AssignmentsService} from '../../models/assignments.service';
@@ -34,6 +40,7 @@ export class SubmitAssignmentComponent implements OnInit {
   ngOnInit() {
   }
 
+  // When form is submitted, data is passed through the service to the api submitAssignment File
   onSubmit() {
     console.log(this.submitAssignmentForm);
     const args = {

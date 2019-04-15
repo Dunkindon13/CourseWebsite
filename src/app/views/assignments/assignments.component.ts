@@ -32,10 +32,12 @@ export class AssignmentsComponent implements OnInit {
     }
 
     ngOnInit() {
+        //Call getAssignments() when page loads
         this.getAssignments();
     }
 
     getAssignments(): void {
+        // Use service to get all assignments. Split them up based on date into three different arrays.
         this.assignmentsServ.getAll().subscribe(
             (res: Assignment[]) => {
                 this.assignments = res;

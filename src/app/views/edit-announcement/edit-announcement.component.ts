@@ -1,3 +1,9 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 11, 2019
+* Main Purpose: TypeScript component to edit an announcement.
+*/
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -35,6 +41,7 @@ export class EditAnnouncementComponent implements OnInit {
 
   }
 
+// onSubmit() calls the API editAnnouncement() via the service, and sends it the updated information to replace the old info.
   onSubmit() {
     const args = {
       id: this.id,

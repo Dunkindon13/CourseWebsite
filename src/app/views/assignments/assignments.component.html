@@ -3,22 +3,24 @@
 * Last Modified: April 15, 2019
 * Main Purpose: HTML component to show all assignments, current and submitted.-->
 
-<!--<p *ngFor="let assignment of assignments">{{assignment.id}}</p>-->
+
 <div>
 <div class="inline">
     <h3>Assignments</h3>
+    <!--Show Add Assignment button if teacher is logged in-->
     <p *ngIf="nav.role == 'teacher'">
-        <button mat-raised-button color="accent" routerLink="/addassignment">Add assignment</button>
+        <button mat-raised-button color="accent" routerLink="/addassignment">Add Assignment</button>
     </p>
 </div>
 
+<!--Use mat-tab-group to display assignments in four categories: All, Ongoing, Completed, and Upcoming-->
 <mat-tab-group mat-align-tabs="end">
+    <!--All Assignments tab-->
     <mat-tab label="All"><mat-accordion multi="true" class="my-headers-align">
         <div *ngFor="let assignment of assignments | reverse;">
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
                     <mat-panel-title>
-                        <!--User ID: {{assignment.userid}}-->
                     </mat-panel-title>
                     <mat-panel-title>
                         ID: {{assignment.id}}
@@ -37,11 +39,12 @@
                     </mat-panel-title>
                 </mat-expansion-panel-header>
                 <div class="showSummary" [innerHTML]="assignment.body"></div>
-
+                <!--Display View and Edit Buttons if teacher is logged in-->
                 <div class="inline" *ngIf="nav.role == 'teacher'">
                     <button mat-raised-button color="primary" routerLink="/gradeassignment/{{assignment.id}}">View Submissions</button>
                     <button mat-raised-button color="warn" routerLink="/editassignment/{{assignment.id}}">Edit Assignment</button>
                 </div>
+                <!--Display Submit Assignment Button if Student is logged in-->
                 <div class="inline" *ngIf="nav.role == 'student'"><button mat-raised-button color="primary" routerLink="/submitassignment/{{assignment.id}}">Submit assignment</button></div>
 
 
@@ -49,16 +52,12 @@
         </div>
     </mat-accordion>
     </mat-tab>
+    <!--Ongoing assignments-->
     <mat-tab label="Ongoing">
-
-
         <mat-accordion multi="true" class="my-headers-align">
         <div *ngFor="let ongoingAgnmt of ongoing">
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <!--User ID: {{assignment.userid}}-->
-                    </mat-panel-title>
                     <mat-panel-title>
                         ID: {{ongoingAgnmt.id}}
                     </mat-panel-title>
@@ -91,7 +90,7 @@
 
     </mat-tab>
 
-
+    <!--Completed asignments-->
     <mat-tab label="Completed">
         <mat-accordion multi="true" class="my-headers-align">
             <div *ngFor="let completedAgnmt of due">
@@ -152,7 +151,7 @@
                             Due Date: {{upcomingAgnmt.dueDate | date: 'mediumDate'}}
                         </mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div class="showSummary" [innerHTML]="upcomingAgnmt.body"></div>
+                    <div [innerHTML]="upcomingAgnmt.body"></div>
 
                     <div class="inline" *ngIf="nav.role == 'teacher'">
                         <button mat-raised-button color="warn" routerLink="/editAssignment/{{upcomingAgnmt.id}}">Edit Assignment</button>

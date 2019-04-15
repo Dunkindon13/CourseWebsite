@@ -21,18 +21,17 @@ export class AnnouncementsComponent implements OnInit {
   announcements: Announcement[];
   error = '';
   success = '';
-  role: string;
-  teacherIsLoggedIn = true;
-  studentIsLoggedIn = false;
   constructor(private announcementsServ: AnnouncementsService,
               private route: ActivatedRoute,
               private nav: NavComponent) {
   }
   ngOnInit() {
+      // Call getAnnouncements() when page's loaded.
     this.getAnnouncements();
 
   }
 
+  // getAnnouncements() calls API via service to get all of the announcements and stores them in this.announcements.
   getAnnouncements(): void {
     this.announcementsServ.getAll().subscribe(
       (res: Announcement[]) => {
@@ -45,6 +44,7 @@ export class AnnouncementsComponent implements OnInit {
     );
   }
 
+  // Gets total number of announcements for display and pagination
   getAmountOfAnnouncements(): void {
     this.announcementsServ.getAll().subscribe(
         (res) => {
@@ -65,6 +65,13 @@ export class AnnouncementsComponent implements OnInit {
     );
   }
 
+    mark(announcementid) {
+      this.announcementsServ.mark().subscribe(
+          (res) => {
+              // Code to mark assignment as read goes here.
+          }
+      )
+    }
 
 }
 

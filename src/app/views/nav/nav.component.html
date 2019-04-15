@@ -1,3 +1,8 @@
+<!-- Authors: Dmitry Bashmakov, Mathias Donath, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 15, 2019
+* Main Purpose: HTML component to create top banner and side navbar -->
+
 <mat-sidenav-container class="sidenav-container">
 
   <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
@@ -9,8 +14,6 @@
     <mat-nav-list>
       <a mat-list-item routerLink="home">Home/Announcements</a>
       <a mat-list-item routerLink="assignments">Assignments</a>
-      <a *ngIf="teacherLoggedIn" mat-list-item routerLink="teacher">Teacher's cabinet</a>
-      <a *ngIf="studentLoggedIn"mat-list-item routerLink="student">Student's cabinet</a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -28,6 +31,7 @@
       Homepage for COMP 201: Introduction to Web Development
       </div>
 
+      <!--Display buttons for teacher login/student login/logout, The buttons adjust the user's role. With a more robust login system, there would be just one button displayed at a time (login/logout)-->
       <div style="margin-left: 25%;">
         <button *ngIf="!(this.role == 'teacher')" type="button" color="accent"
                 mat-raised-button

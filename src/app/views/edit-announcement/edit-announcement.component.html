@@ -1,4 +1,7 @@
-<h3>Edit Announcement</h3>
+<!-- Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 15, 2019
+* Main Purpose: HTML component to edit a selected announcement. -->
 
 <form (ngSubmit)="onSubmit()" [formGroup]="editAnnouncementForm" fxLayout="column" fxLayoutAlign="center center">
 
@@ -6,6 +9,7 @@
     <input matInput formControlName="title" placeholder="Subject">
   </mat-form-field>
 
+  <!--Restrict date selection so that date can't be before today.-->
   <div>
     <mat-form-field>
       <input matInput formControlName="date" [min]="today" [matDatepicker]="picker" placeholder="Choose a date">

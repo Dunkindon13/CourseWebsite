@@ -1,10 +1,11 @@
 <!-- Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
 * Date Created: April 9, 2019
 * Last Modified: April 15, 2019
-* Main Purpose: HTML component to show all assignments, current and submitted.-->
+* Main Purpose: HTML component to delete a selected announcement-->
 
 <h1>Do you Really Want to Delete this Announcement?</h1>
 
+<!--Allow User to Cancel/Confirm deletion-->
 <div>
   <button mat-raised-button color="primary" (click)="cancel() ">Don't Delete</button>
   <button mat-raised-button color="warn" (click)="deleteAnnouncement()">Confirm and Delete</button>

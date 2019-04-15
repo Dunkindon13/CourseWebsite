@@ -1,3 +1,10 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 9, 2019
+* Last Modified: April 11, 2019
+* Main Purpose: TypeScript component for the navbar
+*/
+
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -23,9 +30,11 @@ export class NavComponent {
     this.role = '';
   }
 
+  // Change the role of user depending on button clicked. More robust login system would be implemented here.
   logIn(role) {
     if (role === 'student') {
       this.role = 'student';
+
     } else if (role === 'teacher') {
       this.role = 'teacher';
     } else {

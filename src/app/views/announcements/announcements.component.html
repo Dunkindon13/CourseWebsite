@@ -40,9 +40,14 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div [innerHTML]="announcement.body"></div>
+      <!--Display Edit and Delete Buttons if teacher is logged in-->
       <div class="inline" *ngIf="nav.role == 'teacher';">
         <button mat-raised-button color="primary" routerLink="/editannouncement/{{announcement.id}}">Edit</button>
         <button mat-raised-button color="warn" routerLink="/deleteannouncement/{{announcement.id}}">Delete</button>
+    </div>
+      <!--Display Mark as Read Button if student is logged in-->
+    <div class="inline" *ngIf="nav.role == 'student';">
+      <button mat-raised-button color="primary" (click)="mark(announcement.id)">Mark as Read</button>
     </div>
     </mat-expansion-panel>
   </div>
