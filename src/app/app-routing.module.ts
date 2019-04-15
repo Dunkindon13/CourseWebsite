@@ -1,3 +1,10 @@
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 14, 2019
+* Main Purpose: Handling components loads / navigation through pages.
+*/
+
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {TeachersHomeComponent} from './views/teachers-home/teachers-home.component';

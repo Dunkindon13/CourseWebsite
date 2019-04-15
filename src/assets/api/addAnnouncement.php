@@ -1,4 +1,12 @@
 <?php
+
+/*
+* Authors: Dmitry Bashmakov, Mathias Donath, Josh Fagen, Lidiya Sokolovskya
+* Date Created: April 10, 2019
+* Last Modified: April 15, 2019
+* Main Purpose: API to connect to database and add a record about announcement.
+*/
+
 require 'connect.php';
 
 $postdata = file_get_contents("php://input");
