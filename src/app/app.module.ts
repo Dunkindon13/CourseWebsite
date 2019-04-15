@@ -43,8 +43,6 @@ import {ReversePipe} from './controllers/reverse.pipe';
 import {AssignmentsComponent} from './views/assignments/assignments.component';
 import {AddAssignmentComponent} from './views/add-assignment/add-assignment.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import {DummyComponent} from './dummy/dummy.component';
-
 import {AddAnnouncementComponent} from './views/add-announcement/add-announcement.component';
 import {AddGradeComponent} from './views/add-grade/add-grade.component';
 import {SubmitAssignmentComponent} from './views/submit-assignment/submit-assignment.component';
@@ -62,7 +60,6 @@ import {EditAssignmentComponent} from './views/edit-assignment/edit-assignment.c
         ReversePipe,
         AssignmentsComponent,
         AddAssignmentComponent,
-        DummyComponent,
         AddAnnouncementComponent,
         AddGradeComponent,
         SubmitAssignmentComponent,

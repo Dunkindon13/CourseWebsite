@@ -17,7 +17,7 @@
 </mat-paginator>
 
 <mat-accordion multi="true" class="my-headers-align">
-  <div *ngFor="let announcement of announcements | reverse;">
+  <div *ngFor="let announcement of (announcements | reverse);">
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>

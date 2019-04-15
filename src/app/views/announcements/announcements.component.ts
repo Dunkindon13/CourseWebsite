@@ -34,7 +34,6 @@ export class AnnouncementsComponent implements OnInit {
   getAnnouncements(): void {
     this.announcementsServ.getAll().subscribe(
       (res: Announcement[]) => {
-        console.log('This Works');
         this.announcements = res;
       },
         (err) => {
