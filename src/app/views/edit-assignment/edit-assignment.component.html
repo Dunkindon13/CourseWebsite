@@ -1,3 +1,34 @@
-<p>
-  edit-assignment works!
-</p>
+<h3>Edit Assignment</h3>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="editAssignmentForm" fxLayout="column" fxLayoutAlign="center center">
+
+    <mat-form-field class="example-full-width">
+        <input matInput formControlName="title" placeholder="Subject">
+    </mat-form-field>
+
+    <div class="example-full-width">
+        <mat-form-field>
+            <input matInput formControlName="releaseDate" [(ngModel)]="release" [min]="today"
+                   [matDatepicker]="ReleaseDate" placeholder="Release Date">
+            <mat-datepicker-toggle matSuffix [for]="ReleaseDate"></mat-datepicker-toggle>
+            <mat-datepicker #ReleaseDate></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="dueDate" [min]="this.release" [matDatepicker]="DueDate"
+                   placeholder="Due Date">
+            <mat-datepicker-toggle matSuffix [for]="DueDate"></mat-datepicker-toggle>
+            <mat-datepicker #DueDate></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <mat-form-field class="example-full-width">
+            <textarea matInput formControlName="body" placeholder="Assignment Description"></textarea>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+    </div>
+</form>

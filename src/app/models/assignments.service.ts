@@ -28,16 +28,16 @@ export class AssignmentsService {
     }
 
 
-
     addAssignment(assignment: Assignment): Observable<any> {
-      return this.http.post(`${this.baseUrl}/addAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
-          map((res) => {
-              this.assignments.push(res['data']);
-              return this.assignments;
-          }),
-          catchError(this.handleError));
+        return this.http.post(`${this.baseUrl}/addAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
+            map((res) => {
+                this.assignments.push(res['data']);
+                return this.assignments;
+            }),
+            catchError(this.handleError));
 
     }
+
     getAllSubmitted(): Observable<SubmittedAssignment[]> {
         return this.http.get(`${this.baseUrl}/readSubmittedAssignments`).pipe(
             map((res) => {
@@ -48,7 +48,7 @@ export class AssignmentsService {
     }
 
     submitAssignment(assignment: SubmittedAssignment): Observable<any> {
-        return this.http.post( `${this.baseUrl}/submitAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
+        return this.http.post(`${this.baseUrl}/submitAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
             map((res) => {
                 this.submittedAssignments.push(res['data']);
                 return this.submittedAssignments;
@@ -63,6 +63,16 @@ export class AssignmentsService {
             map((res) => {
                 this.submittedAssignments.push(res['data']);
                 return this.submittedAssignments;
+            }),
+            catchError(this.handleError));
+
+    }
+
+    editAssignment(assignment: Assignment): Observable<any> {
+        return this.http.post(`${this.baseUrl}/editAssignment`, {data: assignment}, {responseType: 'text'}).pipe(
+            map((res) => {
+                this.assignments.push(res['data']);
+                return this.assignments;
             }),
             catchError(this.handleError));
 
