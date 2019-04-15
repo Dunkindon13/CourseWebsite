@@ -28,11 +28,11 @@ By default, the API launches to port 4200.
   * Submission (Form Data)
   
  * */api/addAssignment/* expects a JSON object with:
-  * title (string)
-  * body (string)
-  * dueDate (Date)
-  * releaseDate (Date)
-  * weight (number)
+   * title (string)
+   * body (string)
+   * dueDate (Date)
+   * releaseDate (Date)
+   * weight (number)
   
   * */api/updateGrade/* expects a JSON object with:
     * Assignment ID (string)
@@ -40,10 +40,10 @@ By default, the API launches to port 4200.
     * New Grade (number)
     
    * */api/addAnnouncement/* expects a JSON object with:
-    * Teacher ID (number)
-    * date (Date)
-    * title (string)
-    * body (string)
+     * Teacher ID (number)
+     * date (Date)
+     * title (string)
+     * body (string)
 
 ## Front-End
 
