@@ -21,6 +21,7 @@ export class AnnouncementsService {
     constructor(private http: HttpClient) {
     }
 
+    // getting all the announcements from the database
     getAll(): Observable<Announcement[]> {
         return this.http.get(`${this.baseUrl}/readAnnouncements`).pipe(
             map((res) => {
@@ -30,6 +31,7 @@ export class AnnouncementsService {
             catchError(this.handleError));
     }
 
+    // adding new announcement
     addAnnouncement(announcement: Announcement): Observable<any> {
         return this.http.post(`${this.baseUrl}/addAnnouncement`, {data: announcement}, {responseType: 'text'}).pipe(
             map((res) => {
@@ -39,6 +41,7 @@ export class AnnouncementsService {
             catchError(this.handleError));
     }
 
+    // Announcement edit function. calling API, passing Announcement object.
     editAnnouncement(announcement: Announcement): Observable<any> {
         return this.http.post(`${this.baseUrl}/editAnnouncement`, {data: announcement}, {responseType: 'text'}).pipe(
             map((res) => {
